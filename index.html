@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Thing Makers Ministry</title>
+
+    <style>
+        body {
+            background-color: #FFFFFF;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 30px;
+        }
+
+        h1 {
+            color: #183153;
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+
+        h2 {
+            color: #183153;
+        }
+
+        p {
+            color: #444444;
+            font-size: 28px;
+            margin-top: 25px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        nav {
+            background-color: #183153;
+            padding: 14px 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+        }
+
+        nav a {
+            color: #FFFFFF;
+            text-decoration: none;
+            margin: 0 10px;
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+
+        section {
+            background-color: #F3F6FA;
+            padding: 40px 20px;
+            max-width: 900px;
+            margin: 30px auto;
+            border-radius: 12px;
+        }
+
+
+        .cards-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cards-container section {
+            flex: 1;
+            min-width: 250px;
+            background-color: #FFFFFF;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-top: 4px solid #C5A04A;
+        }
+
+        footer {
+            background-color: #183153;
+            color: #FFFFFF;
+            padding: 25px 20px;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        footer p {
+            color: #FFFFFF;
+            font-size: 16px;
+            margin: 10px auto;
+        }
+
+        .main-button {
+            display: inline-block;
+            text-align: center;
+            background-color: #C5A04A;
+            color: #183153;
+            padding: 15px 30px;
+            margin-top: 25px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+        }
+        .main-button span {
+            display: block;
+        }
+
+        img {
+            width: 100%;
+            max-height: 450px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .hero {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .hero img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #FFFFFF;
+            text-align: center;
+            width: 90%;
+        }
+        .hero-text span {
+            display: block;
+        }
+
+        .hero-text h2 {
+            font-size: 42px;
+            color: #FFFFFF;
+        }
+
+        .hero-text p {
+            font-size: 22px;
+            color: #FFFFFF;
+        }
+
+        #devotional {
+            background-color: #FFFFFF;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 35px 25px;
+            border-radius: 12px;
+            border-top: 4px solid #C5A04A;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        #teaching {
+            background-color: #FFFFFF;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 35px 25px;
+            border-radius: 12px;
+            border-top: 4px solid #C5A04A;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        #contact {
+            background-color: #FFFFFF;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 35px 25px;
+            border-radius: 12px;
+            border-top: 4px solid #C5A04A;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        #devotional p:last-child {
+            color: #183153;
+            font-size: 24px;
+            font-style: italic;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+    
+    <a href="#home"><span>Home</span><span>ပင်မစာမျက်နှာ</span></a>
+    <a href="#about"><span>About</span><span>အကြောင်းအရာ</span></a>
+    <a href="#devotional"><span>Devotional</span><span>နေ့စဉ်ဝတ်ပြုကိုးကွယ်ခြင်း</span></a>
+    <a href="#teaching"><span>Teaching</span><span>ကျမ်းစာသင်ကြားခြင်း</span></a>
+    <a href="#contact"><span>Contact</span><span>ဆက်သွယ်ရန်</span></a>
+</nav>
+
+    <h1 id="home">
+    <span>New Thing Makers Ministry</span>
+    <span>အမှုသစ်ပြုသောသူများသာသနာ</span>
+</h1>
+
+    <div class="hero">
+        <img src="images/sunrise.jpg" alt="Sunrise over the mountains">
+        <div class="hero-text">
+        <h2>
+            <span>Growing in Christ</span>
+            <span>ခရစ်တော်၌ ကြီးထွားခြင်း</span>
+        </h2>
+        <p>
+            <span>Making Disciples, Expanding His Kingdom</span>
+            <span>တပည့်တော်များ မွေးထုတ်ခြင်း၊ ဘုရားသခင်၏နိုင်ငံတော်ကို ချဲ့ထွင်ခြင်း</span>
+        </p>
+        </div>
+    </div>
+
+<a href="#about" class="main-button">
+    <span>Explore Our Ministry</span>
+    <span>ကျွန်ုပ်တို့၏သာသနာအကြောင်း လေ့လာရန်</span>
+</a>
+    <p>Growing in Christ, Making Disciples, Expanding His Kingdom.</p>
+
+    <section id="about">
+        <h2>About Our Ministry</h2>
+        <p>New Thing Makers Ministry exists to raise Spirit-filled disciples, develop godly leaders, and expand the
+            Kingdom of God.</p>
+            <p>New Thing Makers Ministry သည် ဝိညာဉ်တော်နှင့်ပြည့်ဝသော တပည့်တော်များကို ပြုစုပျိုးထောင်ရန်၊ ဘုရားသခင်၏နိုင်ငံတော်ကို ချဲ့ထွင်ရန်နှင့် ဘုရားသခင်ကို ကြောက်ရွံ့ရိုသေသော ခေါင်းဆောင်များကို ပြုစုပျိုးထောင်ရန် ရည်ရွယ်ပါသည်။</p>
+    </section>
+    <div class="cards-container">
+        <section>
+            <h2>Our Vision</h2>
+            <p>To raise Spirit-filled disciples, develop godly leaders, and expand the Kingdom of God.</p>
+        <p>ဝိညာဉ်တော်နှင့်ပြည့်ဝသော တပည့်တော်များကို ပြုစုပျိုးထောင်ရန်၊ ဘုရားသခင်ကို ကြောက်ရွံ့ရိုသေသော ခေါင်းဆောင်များကို မွေးထုတ်ရန်နှင့် ဘုရားသခင်၏နိုင်ငံတော်ကို ချဲ့ထွင်ရန်။</p>
+        </section>
+
+        <section>
+            <h2>Our Mission</h2>
+            <p>We equip believers through biblical teaching, discipleship, and leadership development to serve Christ
+                faithfully.</p>
+            <p>ကျမ်းစာသွန်သင်ခြင်း၊ တပည့်တော်ပြုစုပျိုးထောင်ခြင်းနှင့် ခေါင်းဆောင်မှုဖွံ့ဖြိုးတိုးတက်ရေးတို့မှတစ်ဆင့် ယုံကြည်သူများကို ခရစ်တော်အား သစ္စာရှိစွာ အမှုတော်ဆောင်နိုင်ရန် ပြင်ဆင်ပေးခြင်းဖြစ်သည်။</p>
+        </section>
+
+        <section>
+            <h2>Our Values</h2>
+            <p>Christ-centered, Spirit-filled, Bible-based, disciple-making, Kingdom-minded, and mission-focused.</p>
+            <p>ခရစ်တော်ကို ဗဟိုပြုခြင်း၊ သန့်ရှင်းသောဝိညာဉ်တော်နှင့် ပြည့်ဝခြင်း၊ သမ္မာကျမ်းစာကို အခြေခံခြင်း၊ တပည့်တော်များ ပြုစုပျိုးထောင်ခြင်း၊ ဘုရားသခင်၏နိုင်ငံတော်ကို အာရုံစိုက်ခြင်းနှင့် သာသနာပြုခြင်းတို့ကို အလေးထားပါသည်။</p>
+        </section>
+    </div>
+    
+
+
+    <section id="devotional">
+        <h2>Daily Devotional</h2>
+        <p>နေ့စဉ် ဝိညာဉ်ရေးရာ ဆင်ခြင်အောက်မေ့ခြင်း</p>
+        <img src="images/bible.jpg" alt="Open Bible" style="width:100%; max-width:500px; display:block; margin:20px auto; border-radius:12px;">
+        <h3>Growing in Christ Every Day</h3>
+        <p>နေ့စဉ် ခရစ်တော်၌ ကြီးထွားခြင်း</p>
+        <p>Read God's Word, reflect on His truth, and respond through prayer.</p>
+        <p>ဘုရားသခင်၏ နှုတ်ကပတ်တော်ကို ဖတ်ရှုပါ၊ ကိုယ်တော်၏ သမ္မာတရားကို ဆင်ခြင်ပါ၊ ဆုတောင်းခြင်းဖြင့် တုံ့ပြန်ပါ။</p>
+        <p><strong>Today's Focus:</strong> Walking with God</p>
+        <p><strong>ယနေ့ အာရုံစိုက်ရန်:</strong> ဘုရားသခင်နှင့်အတူ လျှောက်လှမ်းခြင်း</p>
+        <p><strong>Today's Bible Verse:</strong> Psalm 119:105</p>
+        <p><strong>ယနေ့ ကျမ်းပိုဒ်:</strong> ဆာလံ ၁၁၉:၁၀၅</p>
+        <p>"Your word is a lamp to my feet and a light to my path."</p>
+        <p>နှုတ်​က​ပတ်​တော်​သည် အ​ကျွန်ုပ်​ခြေ​ရှေ့​မှာ မီး​ခွက်​ဖြစ်၍၊ အ​ကျွန်ုပ်​လမ်း​ခ​ရီး​ကို လင်း​စေ​ပါ၏။</p>
+        <h3>Reflection</h3>
+        <h3>ဆင်ခြင်အောက်မေ့ခြင်း</h3>
+        <p>God's Word guides our steps and helps us walk in His truth every day.</p>
+        <h3>Today's Application</h3>
+        <h3>ယနေ့ လက်တွေ့ကျင့်သုံးရန်</h3>
+        <p>Take time to read God's Word and follow His guidance in your decisions today.</p>
+        <h3>Today's Prayer</h3>
+        <h3>ယနေ့ ဆုတောင်းချက်</h3>
+        <p>Lord, guide my steps through Your Word. Help me follow Your truth and walk with You today. Amen.</p>
+        <p>အို သခင်၊ ကိုယ်တော်၏ နှုတ်ကပတ်တော်အားဖြင့် ကျွန်ုပ်၏ ခြေလှမ်းများကို လမ်းပြတော်မူပါ။ ကိုယ်တော်၏ သမ္မာတရားကို လိုက်လျှောက်၍ ယနေ့ ကိုယ်တော်နှင့်အတူ လျှောက်လှမ်းနိုင်ရန် ကူညီတော်မူပါ။ အာမင်။</p>
+    </section>
+
+    <section id="teaching">
+        <h2>Bible Teaching</h2>
+        <h2>ကျမ်းစာသင်ကြားခြင်း</h2>
+        <img src="images/bible-study.png" alt="Ministry Community" style="width:100%; max-width:500px; display:block; margin:20px auto; border-radius:12px;">
+        <p>Learn God's Word and grow as a faithful disciple of Jesus Christ.</p>
+        <p>ဘုရားသခင်၏ နှုတ်ကပတ်တော်ကို သင်ယူပြီး ယေရှုခရစ်တော်၏ သစ္စာရှိသော တပည့်တော်အဖြစ် ကြီးထွားကြပါစို့။</p>
+    </section>
+<section>
+    <h2>Our Ministry Community</h2>
+    <h2>ကျွန်ုပ်တို့၏ အသင်းတော်မိသားစု</h2>
+    <img src="images/ministry-community.jpg" alt="Our Ministry Community" style="width:100%; max-width:800px; display:block; margin:auto; border-radius:12px;">
+    <p>Growing together in Christ through fellowship, worship, and discipleship.</p>
+    <p>ခရစ်တော်၌ မိတ်သဟာယဖွဲ့ခြင်း၊ ဝတ်ပြုကိုးကွယ်ခြင်းနှင့် တပည့်တော်ဖြစ်ခြင်းတို့မှတစ်ဆင့် အတူတကွ ကြီးထွားကြပါစို့။</p>
+</section>
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <h2>ဆက်သွယ်ရန်</h2>
+    <p>Connect with New Thing Makers Ministry for Bible study and discipleship.</p>
+    <p>ကျမ်းစာသင်ယူခြင်းနှင့် တပည့်တော်ဖြစ်ခြင်းအတွက် New Thing Makers Ministry သို့ ဆက်သွယ်နိုင်ပါသည်။</p>
+    <p>
+    <a href="mailto:newthingmakers@gmail.com"
+       style="display:inline-block; background:#C5A04A; color:#183153; padding:14px 28px; border-radius:8px; text-decoration:none; font-weight:bold; margin:10px;">
+       ✉ Email Us
+    </a>
+</p>
+
+<p>
+    <a href="https://wa.me/601127423745"
+       target="_blank"
+       rel="noopener noreferrer"
+       style="display:inline-block; background:#25D366; color:white; padding:14px 28px; border-radius:8px; text-decoration:none; font-weight:bold; margin:10px;">
+       Contact Us on WhatsApp
+    </a>
+</p>
+</section>
+
+<footer>
+    <p>New Thing Makers Ministry</p>
+    <p>Growing in Christ, Making Disciples, Expanding His Kingdom.</p>
+    <p>© 2026 New Thing Makers Ministry</p>
+</footer>
+
+</body>
+
+</html>
