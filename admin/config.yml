@@ -1,0 +1,21 @@
+backend:
+  name: github
+  repo: newthingmakers-cmyk/new-thing-makers-ministry
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "devotional"
+    label: "Daily Devotional"
+    folder: "devotionals"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Bible Verse", name: "verse", widget: "string" }
+      - { label: "Reflection", name: "reflection", widget: "text" }
+      - { label: "Application", name: "application", widget: "text" }
+      - { label: "Prayer", name: "prayer", widget: "text" }
