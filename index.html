@@ -327,16 +327,40 @@ async function loadLatestDevotional() {
 
   // Read a simple YAML-style Markdown devotional file from the GitHub folder.
   function getField(markdown, key) {
-    const pattern = new RegExp("^" + key.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ":\\s*(.*)$", "m");
-    const match = markdown.match(pattern);
-    if (!match) return "";
-    let value = match[1].trim();
-    if ((value.startsWith('"') && value.endsWith('"')) ||
-        (value.startsWith("'") && value.endsWith("'"))) {
-      value = value.slice(1, -1);
+  const lines = markdown.split(/\r?\n/);
+  const escapedKey = key.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const start = lines.findIndex(line =>
+    new RegExp("^" + escapedKey + ":\\s*").test(line)
+  );
+
+  if (start < 0) return "";
+
+  const first = lines[start].slice(lines[start].indexOf(":") + 1).trim();
+
+  if (/^[>|][+-]?$/.test(first)) {
+    const parts = [];
+
+    for (let i = start + 1; i < lines.length; i++) {
+      if (lines[i].trim() && !/^\s/.test(lines[i])) break;
+      parts.push(lines[i].trim());
     }
-    return value;
+
+    return first.startsWith(">")
+      ? parts.join(" ").trim()
+      : parts.join("\n").trim();
   }
+
+  let value = first;
+
+  if (
+    (value.startsWith('"') && value.endsWith('"')) ||
+    (value.startsWith("'") && value.endsWith("'"))
+  ) {
+    value = value.slice(1, -1);
+  }
+
+  return value;
+}
 
   function getList(markdown, key) {
     const lines = markdown.split(/\r?\n/);
