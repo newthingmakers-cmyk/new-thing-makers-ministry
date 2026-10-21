@@ -325,52 +325,132 @@
 async function loadLatestDevotional() {
   const container = document.getElementById("latest-devotional");
 
+  // Read a simple YAML-style Markdown devotional file from the GitHub folder.
+  function getField(markdown, key) {
+    const pattern = new RegExp("^" + key.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ":\\s*(.*)$", "m");
+    const match = markdown.match(pattern);
+    if (!match) return "";
+    let value = match[1].trim();
+    if ((value.startsWith('"') && value.endsWith('"')) ||
+        (value.startsWith("'") && value.endsWith("'"))) {
+      value = value.slice(1, -1);
+    }
+    return value;
+  }
+
+  function getList(markdown, key) {
+    const lines = markdown.split(/\r?\n/);
+    const start = lines.findIndex(line => new RegExp("^" + key + ":\\s*$").test(line.trim()));
+    if (start < 0) {
+      const single = getField(markdown, key);
+      return single ? [single] : [];
+    }
+    const items = [];
+    for (let i = start + 1; i < lines.length; i++) {
+      const line = lines[i];
+      if (/^\S[^:]*:\s*/.test(line.trim())) break;
+      const match = line.match(/^\s*-\s*(.*)$/);
+      if (match) {
+        let item = match[1].trim();
+        if ((item.startsWith('"') && item.endsWith('"')) ||
+            (item.startsWith("'") && item.endsWith("'"))) {
+          item = item.slice(1, -1);
+        }
+        items.push(item);
+      }
+    }
+    return items;
+  }
+
+  function escapeHTML(value) {
+    return String(value || "").replace(/[&<>"']/g, char => ({
+      "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+    }[char]));
+  }
+
+  function paragraph(value) {
+    return value ? `<p>${escapeHTML(value)}</p>` : "";
+  }
+
+  function renderLanguage(title, scripture, verse, reflection, truth, application, decision, prayer) {
+    const applicationHTML = application.length
+      ? `<ul>${application.map(item => `<li>${escapeHTML(item)}</li>`).join("")}</ul>`
+      : "";
+    return `
+      ${title ? `<h3>${escapeHTML(title)}</h3>` : ""}
+      ${scripture ? `<p><strong>Scripture:</strong> ${escapeHTML(scripture)}</p>` : ""}
+      ${verse ? `<p>${escapeHTML(verse)}</p>` : ""}
+      ${reflection ? `<h4>Reflection</h4>${paragraph(reflection)}` : ""}
+      ${truth ? `<h4>Truth</h4>${paragraph(truth)}` : ""}
+      ${applicationHTML ? `<h4>Application</h4>${applicationHTML}` : ""}
+      ${decision ? `<h4>Decision</h4>${paragraph(decision)}` : ""}
+      ${prayer ? `<h4>Prayer</h4>${paragraph(prayer)}` : ""}
+    `;
+  }
+
   try {
     const response = await fetch(
       "https://api.github.com/repos/newthingmakers-cmyk/new-thing-makers-ministry/contents/devotionals?ref=main"
     );
-
-    if (!response.ok) {
-      throw new Error("Unable to load devotionals");
-    }
+    if (!response.ok) throw new Error("Unable to load devotionals");
 
     const files = await response.json();
-    const markdownFiles = files.filter(file =>
-      file.name.endsWith(".md")
-    );
-
+    const markdownFiles = files.filter(file => file.name.toLowerCase().endsWith(".md"));
     if (markdownFiles.length === 0) {
       container.textContent = "No devotionals published yet.";
       return;
     }
 
-    const latestFile = markdownFiles.sort((a, b) =>
-      b.name.localeCompare(a.name)
-    )[0];
+    // Prefer the Day 001 file or the newest date-named file.
+    markdownFiles.sort((a, b) => {
+      const aDay = /^day-\d+/i.test(a.name) ? 1 : 0;
+      const bDay = /^day-\d+/i.test(b.name) ? 1 : 0;
+      if (aDay !== bDay) return bDay - aDay;
+      return b.name.localeCompare(a.name);
+    });
 
+    const latestFile = markdownFiles[0];
     const fileResponse = await fetch(latestFile.download_url);
+    if (!fileResponse.ok) throw new Error("Unable to download devotional");
     const markdown = await fileResponse.text();
 
-    const title = markdown.match(/title:\s*["']?(.+?)["']?\s*$/m);
-    const date = markdown.match(/date:\s*["']?(.+?)["']?\s*$/m);
-    const verse = markdown.match(/verse:\s*["']?(.+?)["']?\s*$/m);
-    const reflection = markdown.match(/reflection:\s*["']?(.+?)["']?\s*$/m);
-    const application = markdown.match(/application:\s*["']?(.+?)["']?\s*$/m);
-    const prayer = markdown.match(/prayer:\s*["']?(.+?)["']?\s*$/m);
+    const date = getField(markdown, "date");
+    const day = getField(markdown, "day");
+    const titleEn = getField(markdown, "title_en") || getField(markdown, "title");
+    const titleMy = getField(markdown, "title_my");
+    const scriptureEn = getField(markdown, "scripture_en");
+    const scriptureMy = getField(markdown, "scripture_my");
+    const verseEn = getField(markdown, "verse_en") || getField(markdown, "verse");
+    const verseMy = getField(markdown, "verse_my");
+    const reflectionEn = getField(markdown, "reflection_en") || getField(markdown, "reflection");
+    const reflectionMy = getField(markdown, "reflection_my");
+    const truthEn = getField(markdown, "truth_en");
+    const truthMy = getField(markdown, "truth_my");
+    const applicationEn = getList(markdown, "application_en");
+    const applicationMy = getList(markdown, "application_my");
+    const decisionEn = getField(markdown, "decision_en");
+    const decisionMy = getField(markdown, "decision_my");
+    const prayerEn = getField(markdown, "prayer_en") || getField(markdown, "prayer");
+    const prayerMy = getField(markdown, "prayer_my");
 
     container.innerHTML = `
-      <h3>${title ? title[1] : "Daily Devotional"}</h3>
-      <p><strong>Date:</strong> ${date ? date[1] : ""}</p>
-      <p><strong>Bible Verse:</strong> ${verse ? verse[1] : ""}</p>
-      <h4>Reflection</h4>
-      <p>${reflection ? reflection[1] : ""}</p>
-      <h4>Application</h4>
-      <p>${application ? application[1] : ""}</p>
-      <h4>Prayer</h4>
-      <p>${prayer ? prayer[1] : ""}</p>
+      <div style="margin-top:25px; padding:24px; background:#F3F6FA; border-radius:12px; text-align:left;">
+        ${day ? `<p><strong>${escapeHTML(day)}</strong></p>` : ""}
+        <p><strong>Date / ရက်စွဲ:</strong> ${escapeHTML(date)}</p>
+        <hr style="border:0; border-top:1px solid #d7dce3; margin:22px 0;">
+        <div lang="en">
+          <h3>English</h3>
+          ${renderLanguage(titleEn, scriptureEn, verseEn, reflectionEn, truthEn, applicationEn, decisionEn, prayerEn)}
+        </div>
+        <hr style="border:0; border-top:1px solid #d7dce3; margin:26px 0;">
+        <div lang="my">
+          <h3>မြန်မာဘာသာ</h3>
+          ${renderLanguage(titleMy, scriptureMy, verseMy, reflectionMy, truthMy, applicationMy, decisionMy, prayerMy)}
+        </div>
+      </div>
     `;
   } catch (error) {
-    container.textContent = "Unable to load the latest devotional.";
+    container.textContent = "Unable to load the latest devotional. Please check the published GitHub Pages website.";
     console.error(error);
   }
 }
