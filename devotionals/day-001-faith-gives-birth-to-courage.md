@@ -8,13 +8,13 @@ scripture_my: "ယောရှု ၂:၁၁"
 verse_en: '"When we heard of these things, our hearts melted in fear and everyone’s courage failed because of you, for the Lord your God is God in heaven above and on the earth below."'
 verse_my: "ထိုသတင်းကိုကြားသောအခါ၊ အကျွန်ုပ်တို့သည် စိတ်ပျက်၍ သင်တို့ကြောင့် တစ်စုံတစ်ယောက်သောသူ၌မျှ ရဲရင့်ခြင်းသတ္တိ အလျှင်းမကျန်ကြွင်းပါ။ အကြောင်းမူကား၊ သင်တို့၏ ဘုရားသခင် ထာဝရဘုရားသည် အထက်ကောင်းကင်ဘုံ၌လည်းကောင်း၊ အောက်အရပ်မြေကြီး၌လည်းကောင်း၊ အစိုးရသော ဘုရားသခင်ဖြစ်တော်မူ၏။"
 reflection_en: |
-  Those who hear about the mighty works of God cannot help but stand in awe of Him. They recognize His sovereign authority over heaven and earth.
+  Those who hear about the mighty works of God cannot help but stand in awe of Him. They recognize His sovereign authority over heaven and earth. 
 
   As God's people, we are not called to live in fear of our enemies. The Lord is still at work today, and in His grace, He invites us to take part in His work. While God's enemies tremble before His power, His children can walk forward with confidence.
 
   Knowing that God reigns over every situation fills our hearts with courage. Our confidence does not come from our own strength but from the certainty that the Almighty God is with us and His kingdom will prevail.
 reflection_my: |
-  ဘုရားသခင်၏ ကြီးမားတန်ခိုးပါသော အမှုတော်များအကြောင်း ကြားသိသူတို့သည် ကိုယ်တော်ကို အံ့ဩရိုသေခြင်းမရှိဘဲ မနေနိုင်ကြပါ။ ကိုယ်တော်သည် ကောင်းကင်နှင့် မြေကြီးအပေါ် အချုပ်အခြာအာဏာပိုင်ရှင်ဖြစ်ကြောင်း သူတို့သိမြင်ကြသည်။
+  ဘုရားသခင်၏ ကြီးမားတန်ခိုးပါသော အမှုတော်များအကြောင်း ကြားသိသူတို့သည် ကိုယ်တော်ကို အံ့ဩရိုသေခြင်းမရှိဘဲ မနေနိုင်ကြပါ။ ကိုယ်တော်သည် ကောင်းကင်နှင့် မြေကြီးအပေါ် အချုပ်အခြာအာဏာပိုင်ရှင်ဖြစ်ကြောင်း သူတို့သိမြင်ကြသည်။ 
 
   ဘုရားသခင်၏လူများဖြစ်သော ကျွန်ုပ်တို့သည် ရန်သူများကို ကြောက်ရွံ့လျက် အသက်ရှင်ရန် ခေါ်တော်မူခြင်းခံရသူများ မဟုတ်ပါ။ သခင်ဘုရားသည် ယနေ့တိုင် အလုပ်လုပ်တော်မူနေပြီး ကျေးဇူးတော်အားဖြင့် ကိုယ်တော်၏အမှုတော်တွင် ပါဝင်ရန် ကျွန်ုပ်တို့ကို ဖိတ်ခေါ်တော်မူသည်။ ဘုရားသခင်၏ရန်သူများသည် ကိုယ်တော်၏တန်ခိုးရှေ့တွင် တုန်လှုပ်ကြသော်လည်း ကိုယ်တော်၏သားသမီးများသည် ယုံကြည်စိတ်ချစွာ ရှေ့ဆက်လျှောက်လှမ်းနိုင်ကြသည်။
 
