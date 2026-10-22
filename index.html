@@ -455,8 +455,11 @@ return b.name.localeCompare(a.name);
     const reflectionMy = getField(markdown, "reflection_my");
     const truthEn = getField(markdown, "truth_en");
     const truthMy = getField(markdown, "truth_my");
-    const applicationEn = getList(markdown, "application_en");
-    const applicationMy = getList(markdown, "application_my");
+    const applicationEn = getList(markdown, "application_en").length
+  ? getList(markdown, "application_en")
+  : getList(markdown, "application");
+
+const applicationMy = getList(markdown, "application_my");
     const decisionEn = getField(markdown, "decision_en");
     const decisionMy = getField(markdown, "decision_my");
     const prayerEn = getField(markdown, "prayer_en") || getField(markdown, "prayer");
