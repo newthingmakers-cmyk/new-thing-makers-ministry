@@ -427,11 +427,8 @@ async function loadLatestDevotional() {
 
     // Prefer the Day 001 file or the newest date-named file.
     markdownFiles.sort((a, b) => {
-      const aDay = /^day-\d+/i.test(a.name) ? 1 : 0;
-      const bDay = /^day-\d+/i.test(b.name) ? 1 : 0;
-      if (aDay !== bDay) return bDay - aDay;
-      return b.name.localeCompare(a.name);
-    });
+  return b.name.localeCompare(a.name);
+});
 
     const latestFile = markdownFiles[0];
     const fileResponse = await fetch(latestFile.download_url);
