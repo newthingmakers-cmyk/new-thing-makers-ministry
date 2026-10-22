@@ -13,9 +13,26 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Bible Verse", name: "verse", widget: "string" }
-      - { label: "Reflection", name: "reflection", widget: "text" }
-      - { label: "Application", name: "application", widget: "text" }
-      - { label: "Prayer", name: "prayer", widget: "text" }
+      - { label: "Day Number (Optional)", name: "day", widget: "string", required: false }
+
+      - { label: "Title — English", name: "title_en", widget: "string" }
+      - { label: "Title — Myanmar", name: "title_my", widget: "string" }
+
+      - { label: "Bible Verse — English", name: "verse_en", widget: "text" }
+      - { label: "Bible Verse — Myanmar", name: "verse_my", widget: "text" }
+
+      - { label: "Reflection — English", name: "reflection_en", widget: "text" }
+      - { label: "Reflection — Myanmar", name: "reflection_my", widget: "text" }
+
+      - { label: "Truth — English (Optional)", name: "truth_en", widget: "text", required: false }
+      - { label: "Truth — Myanmar (Optional)", name: "truth_my", widget: "text", required: false }
+
+      - { label: "Application — English", name: "application_en", widget: "text" }
+      - { label: "Application — Myanmar", name: "application_my", widget: "text" }
+
+      - { label: "Decision — English (Optional)", name: "decision_en", widget: "text", required: false }
+      - { label: "Decision — Myanmar (Optional)", name: "decision_my", widget: "text", required: false }
+
+      - { label: "Prayer — English", name: "prayer_en", widget: "text" }
+      - { label: "Prayer — Myanmar", name: "prayer_my", widget: "text" }
