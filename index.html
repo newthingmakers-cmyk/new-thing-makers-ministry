@@ -4,35 +4,170 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#173c35">
+<meta name="description" content="New Thing Makers Ministry — Growing in Christ, Making Disciples, Expanding His Kingdom.">
 <title>New Thing Makers Ministry</title>
 <style>
-:root{--green:#173c35;--green2:#24584d;--gold:#d7b66d;--paper:#fbfaf6;--ink:#202a27;--muted:#66736e;--line:#e4e6df}
-*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,"Noto Serif Myanmar","Myanmar Text",serif;line-height:1.75}
-button,input{font:inherit}.hero{background:linear-gradient(135deg,var(--green),#102c27);color:#fff;padding:30px 18px 34px;text-align:center;border-bottom:4px solid var(--gold)}
-.brand{font-family:Arial,sans-serif;letter-spacing:.13em;text-transform:uppercase;font-size:clamp(1.1rem,3vw,1.7rem);font-weight:700}
-.tagline{margin:8px auto 0;max-width:700px;color:#e8eee9}.topbar{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid var(--line);display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap;padding:10px 14px}
-.lang-button,.plain-button{border:1px solid #cbd5cf;border-radius:999px;padding:7px 15px;background:#fff;color:var(--green);cursor:pointer}.lang-button[aria-pressed=true]{background:var(--green);color:#fff;border-color:var(--green)}
-.wrap{max-width:980px;margin:0 auto;padding:24px 16px 56px}.toolbar{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;margin-bottom:18px}
-.search{width:100%;padding:11px 14px;border:1px solid #cbd5cf;border-radius:10px;background:#fff}.section-label{font-family:Arial,sans-serif;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--green2);font-weight:700;margin:0 0 12px}
-.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:clamp(18px,4vw,34px);box-shadow:0 8px 26px #20372d0a}.date{font-family:Arial,sans-serif;color:var(--muted);font-size:.9rem;margin:0 0 6px}
-h1{font-size:clamp(1.6rem,5vw,2.3rem);line-height:1.35;color:var(--green);margin:0 0 18px}h2{font-size:1.1rem;color:var(--green2);margin:24px 0 5px}
-.verse{padding:15px 18px;background:#f5f3eb;border-left:4px solid var(--gold);border-radius:0 10px 10px 0;white-space:pre-wrap}.body-copy{white-space:pre-wrap;overflow-wrap:anywhere}
-.truth,.decision{padding:12px 15px;border-radius:10px;background:#edf3ef}.archive{margin-top:30px}details.year{border:1px solid var(--line);border-radius:12px;background:#fff;margin:9px 0;overflow:hidden}
-details.year>summary{cursor:pointer;padding:12px 16px;background:#f1f4f0;color:var(--green);font-weight:bold}.month{padding:8px 14px 12px}.month h3{font-size:1rem;margin:8px 0;color:var(--muted)}
-.entry{display:block;text-align:left;width:100%;padding:9px 10px;border:0;border-radius:7px;background:transparent;cursor:pointer;color:var(--green);line-height:1.5}.entry:hover,.entry:focus{background:#f1f4f0}.entry small{display:block;color:var(--muted);font-family:Arial,sans-serif;font-size:.78rem}
-.status{padding:16px;text-align:center;color:var(--muted)}.footer{text-align:center;color:var(--muted);font-size:.9rem;margin-top:30px}.error{color:#8b2f24;background:#fff1ef;border-radius:10px;padding:12px}
-@media(max-width:600px){.toolbar{grid-template-columns:1fr}.topbar{position:static}.wrap{padding-top:18px}.card{border-radius:12px}}
+:root{--green:#173c35;--green2:#24584d;--gold:#d7b66d;--paper:#fbfaf6;--ink:#202a27;--muted:#66736e;--line:#e4e6df;--white:#fff;--soft:#edf3ef}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:78px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,"Noto Serif Myanmar","Myanmar Text",serif;line-height:1.75}
+button,input{font:inherit}
+a{color:inherit}
+button{cursor:pointer}
+.site-hero{position:relative;isolation:isolate;overflow:hidden;text-align:center;color:#fff;background:linear-gradient(180deg,rgba(15,43,37,.5),rgba(15,43,37,.9)),url("sunrise.jpg") center 48%/cover no-repeat;min-height:360px;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:60px 18px 58px;border-bottom:4px solid var(--gold)}
+.site-hero:before{content:"";position:absolute;inset:0;background:linear-gradient(130deg,rgba(23,60,53,.35),rgba(16,44,39,.28));z-index:-1}
+.brand{font-family:Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;font-size:clamp(1.25rem,3.6vw,2.2rem);font-weight:700;line-height:1.35;text-wrap:balance}
+.brand-my{font-size:clamp(1.15rem,3vw,1.7rem);margin:10px 0 0}
+.hero-line{font-size:clamp(1.15rem,2.7vw,1.7rem);font-weight:bold;margin:22px 0 0}
+.hero-subline{margin:5px auto 0;max-width:760px;color:#f1f3ec}
+.hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:10px 20px;text-decoration:none;border:1px solid transparent;font-weight:bold;transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn-gold{background:var(--gold);color:#20352e}
+.btn-light{background:#fff;color:var(--green)}
+.btn-outline{border-color:#cbd5cf;color:var(--green);background:#fff}
+.topbar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap;padding:9px 12px}
+.nav-links{display:flex;gap:4px;align-items:center;justify-content:center;flex-wrap:wrap}
+.nav-links a{display:inline-block;text-decoration:none;color:var(--green);padding:7px 12px;border-radius:999px;font-family:Arial,sans-serif;font-size:.92rem;font-weight:700}
+.nav-links a:hover,.nav-links a:focus{background:var(--soft)}
+.lang-button,.plain-button{border:1px solid #cbd5cf;border-radius:999px;padding:7px 13px;background:#fff;color:var(--green);cursor:pointer}
+.lang-button[aria-pressed=true]{background:var(--green);color:#fff;border-color:var(--green)}
+.wrap{max-width:1080px;margin:0 auto;padding:48px 18px}
+.section{scroll-margin-top:82px}
+.section-heading{text-align:center;margin:0 auto 24px;max-width:780px}
+.eyebrow{font-family:Arial,sans-serif;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--green2);font-weight:700;margin:0 0 8px}
+h1,h2,h3{line-height:1.35}
+h1{font-size:clamp(1.7rem,4vw,2.5rem);color:var(--green);margin:0 0 14px}
+h2{font-size:clamp(1.35rem,3vw,1.8rem);color:var(--green);margin:0 0 12px}
+h3{color:var(--green2);margin:0 0 8px}
+.lead{font-size:1.08rem;max-width:780px;margin:0 auto;color:#45534d}
+.about-intro{background:#fff;border:1px solid var(--line);border-radius:18px;padding:clamp(22px,4vw,40px);text-align:center;box-shadow:0 8px 26px #20372d08}
+.card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:22px}
+.info-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:0 8px 26px #20372d08}
+.info-card .symbol{font-size:1.6rem;margin-bottom:8px}
+.info-card p{margin:0;color:#4e5c55}
+.teaching-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:26px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:18px;padding:clamp(18px,3vw,30px)}
+.teaching-image{display:block;width:100%;height:290px;object-fit:cover;border-radius:12px;background:#e8eee9}
+.teaching-copy p{margin-top:0}
+.contact-panel{background:linear-gradient(135deg,var(--green),#102c27);color:#fff;text-align:center;border-radius:18px;padding:clamp(25px,5vw,48px)}
+.contact-panel h2{color:#fff}
+.contact-panel p{max-width:720px;margin:0 auto 20px;color:#e8eee9}
+.contact-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.contact-note{font-size:.88rem;color:#dbe6df!important;margin-top:16px!important}
+.devotional-section{background:#f1f4f0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.devotional-section .wrap{padding-top:42px;padding-bottom:48px}
+.devotional-head{text-align:center;margin:0 auto 22px;max-width:780px}
+.devotional-head p{margin:0;color:var(--muted)}
+.devotional-tools{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center;margin-bottom:18px}
+.search{width:100%;padding:11px 14px;border:1px solid #cbd5cf;border-radius:10px;background:#fff}
+.devotional-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:clamp(18px,4vw,34px);box-shadow:0 8px 26px #20372d0a}
+.devotional-title{font-size:clamp(1.55rem,4vw,2.2rem);color:var(--green);margin:0 0 18px}
+.date{font-family:Arial,sans-serif;color:var(--muted);font-size:.9rem;margin:0 0 6px}
+.devotional-card h3{font-size:1.08rem;margin:24px 0 7px}
+.verse{padding:15px 18px;background:#f5f3eb;border-left:4px solid var(--gold);border-radius:0 10px 10px 0;white-space:pre-wrap;overflow-wrap:anywhere}
+.body-copy{white-space:pre-wrap;overflow-wrap:anywhere}
+.truth,.decision{padding:12px 15px;border-radius:10px;background:var(--soft)}
+.archive{margin-top:26px}
+details.year{border:1px solid var(--line);border-radius:12px;background:#fff;margin:9px 0;overflow:hidden}
+details.year>summary{cursor:pointer;padding:12px 16px;background:#f1f4f0;color:var(--green);font-weight:bold}
+.month{padding:8px 14px 12px}.month h4{font-size:1rem;margin:8px 0;color:var(--muted)}
+.entry{display:block;text-align:left;width:100%;padding:9px 10px;border:0;border-radius:7px;background:transparent;cursor:pointer;color:var(--green);line-height:1.5}
+.entry:hover,.entry:focus{background:#f1f4f0}.entry small{display:block;color:var(--muted);font-family:Arial,sans-serif;font-size:.78rem}
+.status{padding:16px;text-align:center;color:var(--muted)}.error{color:#8b2f24;background:#fff1ef;border-radius:10px;padding:12px}
+.site-footer{text-align:center;color:#dce6df;background:#102c27;padding:28px 16px;border-top:4px solid var(--gold)}
+.site-footer strong{display:block;color:#fff;letter-spacing:.06em;font-family:Arial,sans-serif}
+.site-footer p{margin:4px 0}
+.footer-copy{font-size:.86rem;color:#b9c9c1;margin-top:12px!important}
+[hidden]{display:none!important}
+@media(max-width:760px){.card-grid{grid-template-columns:1fr}.teaching-grid{grid-template-columns:1fr}.teaching-image{height:230px}.topbar{position:static}.nav-links a{padding:7px 9px}.wrap{padding:36px 15px}}
+@media(max-width:520px){.site-hero{min-height:320px;padding:48px 16px}.devotional-tools{grid-template-columns:1fr}.nav-links{width:100%}.nav-links a{font-size:.85rem}.topbar{gap:7px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
 </style>
 </head>
 <body>
-<header class="hero"><div class="brand">New Thing Makers Ministry</div><p class="tagline" id="tagline">Daily devotionals to help us walk with God.</p></header>
-<nav class="topbar" aria-label="Language selection"><button class="lang-button" id="englishBtn" aria-pressed="true">English</button><button class="lang-button" id="myanmarBtn" aria-pressed="false">မြန်မာ</button><button class="plain-button" id="latestBtn">Latest devotional</button></nav>
-<main class="wrap">
-<div class="toolbar"><input class="search" id="searchInput" type="search" placeholder="Search devotionals…" aria-label="Search devotionals"><button class="plain-button" id="archiveToggle">Archive</button></div>
-<div id="status" class="status" role="status">Loading devotionals…</div><article id="devotional" class="card" hidden></article>
-<section class="archive" id="archive" hidden><p class="section-label" id="archiveHeading">Devotional archive</p><div id="archiveList"></div></section>
-<p class="footer" id="footerText">New Thing Makers Ministry</p>
+<header class="site-hero" id="home">
+  <div class="brand">New Thing Makers Ministry</div>
+  <p class="brand-my" data-en="New Thing Makers Ministry" data-my="အသစ်သောအရာများကို ဖန်တီးတော်မူသော ဘုရားသခင်၏ အမှုတော်"></p>
+  <p class="hero-line" data-en="Growing in Christ" data-my="ခရစ်တော်၌ ကြီးထွားခြင်း"></p>
+  <p class="hero-subline" data-en="Making Disciples, Expanding His Kingdom" data-my="တပည့်တော်များကို ပြုစုပျိုးထောင်ခြင်း၊ ကိုယ်တော်၏နိုင်ငံတော်ကို ချဲ့ထွင်ခြင်း"></p>
+  <div class="hero-actions"><a class="btn btn-gold" href="#about" data-en="Explore Our Ministry" data-my="ကျွန်ုပ်တို့၏အမှုတော်ကို လေ့လာရန်"></a><a class="btn btn-light" href="#devotional" data-en="Read Devotionals" data-my="နေ့စဉ်ဝေငှချက်များ ဖတ်ရန်"></a></div>
+</header>
+
+<nav class="topbar" aria-label="Main navigation">
+  <div class="nav-links">
+    <a href="#home" data-en="Home" data-my="ပင်မ"></a>
+    <a href="#about" data-en="About" data-my="အကြောင်း"></a>
+    <a href="#devotional" data-en="Devotional" data-my="ဝိညာဉ်ရေးရာ"></a>
+    <a href="#teaching" data-en="Teaching" data-my="သင်ကြားခြင်း"></a>
+    <a href="#contact" data-en="Contact" data-my="ဆက်သွယ်ရန်"></a>
+  </div>
+  <button class="lang-button" id="englishBtn" aria-pressed="true">English</button>
+  <button class="lang-button" id="myanmarBtn" aria-pressed="false">မြန်မာ</button>
+</nav>
+
+<main>
+<section class="wrap section" id="about">
+  <div class="section-heading">
+    <p class="eyebrow" data-en="Who we are" data-my="ကျွန်ုပ်တို့၏အကြောင်း"></p>
+    <h1 data-en="About Our Ministry" data-my="ကျွန်ုပ်တို့၏အမှုတော်အကြောင်း"></h1>
+    <p class="lead" data-en="New Thing Makers Ministry exists to help people grow in Christ, become faithful disciples, and take part in expanding His Kingdom." data-my="New Thing Makers Ministry သည် လူများ ခရစ်တော်၌ ကြီးထွားလာရန်၊ သစ္စာရှိသော တပည့်တော်များ ဖြစ်လာရန်နှင့် ကိုယ်တော်၏နိုင်ငံတော်ကို ချဲ့ထွင်ရာတွင် ပါဝင်ရန် ရည်ရွယ်ပါသည်။"></p>
+  </div>
+  <div class="card-grid">
+    <article class="info-card"><div class="symbol" aria-hidden="true">🌄</div><h3 data-en="Our Vision" data-my="ကျွန်ုပ်တို့၏ရူပါရုံ"></h3><p data-en="To see lives transformed by Christ and communities strengthened through faithful discipleship." data-my="ခရစ်တော်အားဖြင့် အသက်တာများ ပြောင်းလဲပြီး သစ္စာရှိသော တပည့်တော်ပြုစုခြင်းအားဖြင့် လူမှုအသိုင်းအဝိုင်းများ ခိုင်မာလာသည်ကို မြင်တွေ့ရန်။"></p></article>
+    <article class="info-card"><div class="symbol" aria-hidden="true">📖</div><h3 data-en="Our Mission" data-my="ကျွန်ုပ်တို့၏သာသနာတာဝန်"></h3><p data-en="To teach God's Word, nurture spiritual growth, and equip believers to make disciples." data-my="ဘုရားသခင်၏နှုတ်ကပတ်တော်ကို သင်ကြားရန်၊ ဝိညာဉ်ရေးရာ ကြီးထွားမှုကို ပျိုးထောင်ရန်နှင့် ယုံကြည်သူများကို တပည့်တော်ပြုစုနိုင်ရန် ပြင်ဆင်ပေးရန်။"></p></article>
+    <article class="info-card"><div class="symbol" aria-hidden="true">🤝</div><h3 data-en="Our Values" data-my="ကျွန်ုပ်တို့၏တန်ဖိုးများ"></h3><p data-en="Biblical truth, prayer, love, integrity, service, and a life of obedience to Jesus." data-my="ကျမ်းစာသမ္မာတရား၊ ဆုတောင်းခြင်း၊ ချစ်ခြင်းမေတ္တာ၊ ဖြောင့်မတ်ခြင်း၊ အစေခံခြင်းနှင့် ယေရှုကို နာခံသောအသက်တာ။"></p></article>
+  </div>
+</section>
+
+<section class="wrap section" id="teaching">
+  <div class="section-heading">
+    <p class="eyebrow" data-en="Learn and grow" data-my="သင်ယူပြီး ကြီးထွားကြပါစို့"></p>
+    <h2 data-en="Bible Teaching" data-my="သမ္မာကျမ်းစာ သင်ကြားခြင်း"></h2>
+  </div>
+  <div class="teaching-grid">
+    <img class="teaching-image" src="ministry-community.jpg" alt="Ministry community" loading="lazy" onerror="this.onerror=null;this.src='bible-study.png';">
+    <div class="teaching-copy">
+      <h3 data-en="Grow as a faithful disciple" data-my="သစ္စာရှိသော တပည့်တော်အဖြစ် ကြီးထွားပါ"></h3>
+      <p data-en="Learn God's Word and grow as a faithful disciple of Jesus Christ. Explore Bible teaching, discipleship resources, and practical ways to live out your faith." data-my="ဘုရားသခင်၏နှုတ်ကပတ်တော်ကို လေ့လာပြီး ယေရှုခရစ်တော်၏ သစ္စာရှိသော တပည့်တော်အဖြစ် ကြီးထွားပါ။ သမ္မာကျမ်းစာသင်ကြားချက်များ၊ တပည့်တော်ပြုစုရေး အထောက်အကူများနှင့် ယုံကြည်ခြင်းကို လက်တွေ့အသက်ရှင်ဖော်ပြနိုင်မည့် နည်းလမ်းများကို လေ့လာပါ။"></p>
+      <a class="btn btn-outline" href="#devotional" data-en="Explore Devotionals" data-my="ဝိညာဉ်ရေးရာ ဝေငှချက်များကို ကြည့်ရန်"></a>
+    </div>
+  </div>
+</section>
+
+<section class="devotional-section section" id="devotional">
+  <div class="wrap">
+    <div class="devotional-head">
+      <p class="eyebrow" data-en="Daily time with God" data-my="ဘုရားသခင်နှင့် နေ့စဉ်အချိန်ယူခြင်း"></p>
+      <h2 data-en="Daily Devotional" data-my="နေ့စဉ်ဝိညာဉ်ရေးရာ ဝေငှချက်"></h2>
+      <p data-en="Read, reflect on God's Word, and put His truth into practice." data-my="ဘုရားသခင်၏နှုတ်ကပတ်တော်ကို ဖတ်ရှု၊ ဆင်ခြင်အောက်မေ့ပြီး သမ္မာတရားကို လက်တွေ့အသုံးချပါ။"></p>
+    </div>
+    <div class="devotional-tools">
+      <input class="search" id="searchInput" type="search" placeholder="Search devotionals…" aria-label="Search devotionals">
+      <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="plain-button" id="latestBtn" data-en="Latest devotional" data-my="နောက်ဆုံးဝေငှချက်"></button><button class="plain-button" id="archiveToggle" data-en="Archive" data-my="မှတ်တမ်း"></button></div>
+    </div>
+    <div id="status" class="status" role="status">Loading devotionals…</div>
+    <article id="devotionalCard" class="devotional-card" hidden></article>
+    <section class="archive" id="archive" hidden><p class="eyebrow" id="archiveHeading" data-en="Devotional archive" data-my="ဝေငှချက်မှတ်တမ်း"></p><div id="archiveList"></div></section>
+  </div>
+</section>
+
+<section class="wrap section" id="contact">
+  <div class="contact-panel">
+    <p class="eyebrow" style="color:var(--gold)" data-en="Let's connect" data-my="ဆက်သွယ်ကြပါစို့"></p>
+    <h2 data-en="Connect With Our Ministry" data-my="ကျွန်ုပ်တို့၏အမှုတော်နှင့် ဆက်သွယ်ပါ"></h2>
+    <p data-en="Connect with New Thing Makers Ministry for Bible study, prayer, and discipleship." data-my="သမ္မာကျမ်းစာလေ့လာခြင်း၊ ဆုတောင်းခြင်းနှင့် တပည့်တော်ပြုစုခြင်းအတွက် New Thing Makers Ministry နှင့် ဆက်သွယ်နိုင်ပါသည်။"></p>
+    <div class="contact-actions"><a class="btn btn-gold" href="mailto:newthingmakers@gmail.com" id="emailLink" data-en="Email Us" data-my="အီးမေးလ်ပို့ရန်"></a><a class="btn btn-light" href="https://wa.me/601164228470" id="whatsappLink" target="_blank" rel="noopener noreferrer" data-en="WhatsApp" data-my="WhatsApp"></a></div>
+    <p class="contact-note" id="contact-details" data-en="Email: newthingmakers@gmail.com · WhatsApp: +60 11-6422 8470" data-my="အီးမေးလ်: newthingmakers@gmail.com · WhatsApp: +60 11-6422 8470"></p>
+  </div>
+</section>
 </main>
+
+<footer class="site-footer">
+  <strong>New Thing Makers Ministry</strong>
+  <p data-en="Growing in Christ · Making Disciples · Expanding His Kingdom" data-my="ခရစ်တော်၌ ကြီးထွားခြင်း · တပည့်တော်များကို ပြုစုပျိုးထောင်ခြင်း · ကိုယ်တော်၏နိုင်ငံတော်ကို ချဲ့ထွင်ခြင်း"></p>
+  <p class="footer-copy">© <span id="year"></span> New Thing Makers Ministry</p>
+</footer>
+
 <script>
 (() => {
 "use strict";
@@ -47,7 +182,7 @@ let language="en", devotionals=[];
 const $=id=>document.getElementById(id), myanmarRegex=/[\u1000-\u109F\uAA60-\uAA7F]/;
 function splitLegacy(value){if(!value)return{en:"",my:""};const m=myanmarRegex.exec(value);if(!m)return{en:value.trim(),my:""};return{en:value.slice(0,m.index).replace(/[\s|—–-]+$/,"").trim(),my:value.slice(m.index).trim()};}
 function parseFrontMatter(text){
- const normalized=text.replace(/^\uFEFF/,"").replace(/\r\n/g,"\n"), match=normalized.match(/^---\s*\n([\s\S]*?)\n---(?:\s*\n|$)/);
+ const normalized=text.replace(/^\uFEFF/,"").replace(/\r\n/g,"\n"),match=normalized.match(/^---\s*\n([\s\S]*?)\n---(?:\s*\n|$)/);
  if(!match)return{};const lines=match[1].split("\n"),data={};let block=null;
  for(const line of lines){const f=line.match(/^([A-Za-z0-9_-]+):(?:\s*(.*))?$/);
   if(f){const key=f[1],raw=f[2]||"";if(["|",">","|-",">-"].includes(raw)){block={key,fold:raw.startsWith(">"),lines:[]};data[key]="";}
@@ -72,37 +207,48 @@ function normalize(data,filename,url,rawText){
 function dateLabel(date){if(!date)return"";const d=new Date(date+"T12:00:00");return language==="my"?`${d.getFullYear()} ${MONTHS.my[d.getMonth()]} ${d.getDate()}`:d.toLocaleDateString("en",{year:"numeric",month:"long",day:"numeric"});}
 function esc(v){return String(v||"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
 function localized(d,stem){return language==="my"?(d[stem+"_my"]||d[stem+"_en"]||""):(d[stem+"_en"]||d[stem+"_my"]||"");}
-function block(label,content,klass="body-copy"){return content?`<section><h2>${esc(label)}</h2><div class="${klass}">${esc(content)}</div></section>`:"";}
+function block(label,content,klass="body-copy"){return content?`<section><h3>${esc(label)}</h3><div class="${klass}">${esc(content)}</div></section>`:"";}
 function hashFile(){const m=location.hash.match(/(?:^#|&)devotional=([^&]+)/);if(!m)return"";try{return decodeURIComponent(m[1]);}catch{return m[1];}}
 function show(d,updateHash=true){if(!d)return;const title=localized(d,"title")||(language==="my"?"နေ့စဉ်ဝိညာဉ်ရေးရာ ဝေငှချက်":"Daily Devotional"),verse=localized(d,"verse")||localized(d,"scripture");
- $("devotional").innerHTML=`<p class="date">${esc(dateLabel(d.date))}${d.day?" · "+esc(language==="my"?"နေ့ "+d.day:"Day "+d.day):""}</p><h1>${esc(title)}</h1>${block(TEXT[language].verse,verse,"verse")}${block(TEXT[language].reflection,localized(d,"reflection"))}${block(TEXT[language].truth,localized(d,"truth"),"truth")}${block(TEXT[language].application,localized(d,"application"))}${block(TEXT[language].decision,localized(d,"decision"),"decision")}${block(TEXT[language].prayer,localized(d,"prayer"))}`;
- $("devotional").hidden=false;$("status").hidden=true;if(updateHash&&d.filename)history.replaceState(null,"",`#devotional=${encodeURIComponent(d.filename)}`);
+ $("devotionalCard").innerHTML=`<p class="date">${esc(dateLabel(d.date))}${d.day?" · "+esc(language==="my"?"နေ့ "+d.day:"Day "+d.day):""}</p><h2 class="devotional-title">${esc(title)}</h2>${block(TEXT[language].verse,verse,"verse")}${block(TEXT[language].reflection,localized(d,"reflection"))}${block(TEXT[language].truth,localized(d,"truth"),"truth")}${block(TEXT[language].application,localized(d,"application"))}${block(TEXT[language].decision,localized(d,"decision"),"decision")}${block(TEXT[language].prayer,localized(d,"prayer"))}`;
+ $("devotionalCard").hidden=false;$("status").hidden=true;if(updateHash&&d.filename)history.replaceState(null,"",`#devotional=${encodeURIComponent(d.filename)}`);
 }
-function matches(d,q){return !q||[d.title_en,d.title_my,d.verse_en,d.verse_my,d.reflection_en,d.reflection_my,d.application_en,d.application_my,d.prayer_en,d.prayer_my,d.filename,d.rawText].join(" ").toLowerCase().includes(q.toLowerCase());}
+function matches(d,q){return !q||[d.title_en,d.title_my,d.verse_en,d.verse_my,d.reflection_en,d.reflection_my,d.truth_en,d.truth_my,d.application_en,d.application_my,d.decision_en,d.decision_my,d.prayer_en,d.prayer_my,d.filename,d.rawText].join(" ").toLowerCase().includes(q.toLowerCase());}
 function renderArchive(){
  const filtered=devotionals.filter(d=>matches(d,$("searchInput").value.trim()));
  if(!filtered.length){$("archiveList").innerHTML=`<p class="status">${esc(TEXT[language].empty)}</p>`;return;}
  const groups=new Map();filtered.forEach(d=>{const y=d.date?d.date.slice(0,4):(language==="my"?"အခြား":"Other"),mi=d.date?Number(d.date.slice(5,7))-1:-1,m=mi>=0?MONTHS[language][mi]:(language==="my"?"ရက်စွဲမသိ":"Undated");if(!groups.has(y))groups.set(y,new Map());if(!groups.get(y).has(m))groups.get(y).set(m,[]);groups.get(y).get(m).push(d);});
- $("archiveList").innerHTML=[...groups.entries()].map(([y,months,],i)=>`<details class="year" ${i===0?"open":""}><summary>${esc(y)}</summary>${[...months.entries()].map(([m,items])=>`<div class="month"><h3>${esc(m)}</h3>${items.map(d=>`<button class="entry" data-file="${esc(d.filename)}">${esc(localized(d,"title")||d.filename)}<small>${esc(dateLabel(d.date))}</small></button>`).join("")}</div>`).join("")}</details>`).join("");
- $("archiveList").querySelectorAll("[data-file]").forEach(b=>b.addEventListener("click",()=>{show(devotionals.find(d=>d.filename===b.dataset.file));window.scrollTo({top:0,behavior:"smooth"});}));
+ $("archiveList").innerHTML=[...groups.entries()].map(([y,months],i)=>`<details class="year" ${i===0?"open":""}><summary>${esc(y)}</summary>${[...months.entries()].map(([m,items])=>`<div class="month"><h4>${esc(m)}</h4>${items.map(d=>`<button class="entry" data-file="${esc(d.filename)}">${esc(localized(d,"title")||d.filename)}<small>${esc(dateLabel(d.date))}</small></button>`).join("")}</div>`).join("")}</details>`).join("");
+ $("archiveList").querySelectorAll("[data-file]").forEach(b=>b.addEventListener("click",()=>{show(devotionals.find(d=>d.filename===b.dataset.file));$("devotional").scrollIntoView({behavior:"smooth",block:"start"});}));
 }
 function applyLanguage(){
- document.documentElement.lang=language==="my"?"my":"en";$("tagline").textContent=TEXT[language].tagline;$("latestBtn").textContent=TEXT[language].latest;$("searchInput").placeholder=TEXT[language].search;$("searchInput").setAttribute("aria-label",TEXT[language].search);$("archiveToggle").textContent=TEXT[language].archive;$("archiveHeading").textContent=TEXT[language].archiveHeading;$("footerText").textContent=TEXT[language].footer;
- $("englishBtn").setAttribute("aria-pressed",String(language==="en"));$("myanmarBtn").setAttribute("aria-pressed",String(language==="my"));const active=devotionals.find(d=>d.filename===hashFile())||devotionals[0];if(active)show(active,false);renderArchive();
+ document.documentElement.lang=language==="my"?"my":"en";
+ document.querySelectorAll("[data-en][data-my]").forEach(el=>{el.textContent=el.dataset[language]||"";});
+ $("searchInput").placeholder=TEXT[language].search;$("searchInput").setAttribute("aria-label",TEXT[language].search);
+ $("englishBtn").setAttribute("aria-pressed",String(language==="en"));$("myanmarBtn").setAttribute("aria-pressed",String(language==="my"));
+ const active=devotionals.find(d=>d.filename===hashFile())||devotionals[0];if(active)show(active,false);
+ if(!$("status").hidden&&devotionals.length===0)$("status").textContent=TEXT[language].loading;
+ renderArchive();
 }
 async function load(){
- try{const r=await fetch(API,{headers:{"Accept":"application/vnd.github+json"}});if(!r.ok)throw Error("GitHub API "+r.status);const files=await r.json(),md=files.filter(f=>f.type==="file"&&f.name.toLowerCase().endsWith(".md"));
- const results=await Promise.all(md.map(async file=>{try{const r=await fetch(file.download_url);if(!r.ok)return null;const text=await r.text();return normalize(parseFrontMatter(text),file.name,file.download_url,text);}catch{return null;}}));
- devotionals=results.filter(d=>d&&d.date).sort((a,b)=>b.date.localeCompare(a.date)||a.filename.localeCompare(b.filename));$("status").hidden=true;
- if(!devotionals.length){$("status").hidden=false;$("status").textContent=TEXT[language].empty;return;}show(devotionals.find(d=>d.filename===hashFile())||devotionals[0],false);renderArchive();
+ try{
+  const r=await fetch(API,{headers:{"Accept":"application/vnd.github+json"}});if(!r.ok)throw Error("GitHub API "+r.status);
+  const files=await r.json(),md=files.filter(f=>f.type==="file"&&f.name.toLowerCase().endsWith(".md"));
+  const results=await Promise.all(md.map(async file=>{try{const r=await fetch(file.download_url);if(!r.ok)return null;const text=await r.text();return normalize(parseFrontMatter(text),file.name,file.download_url,text);}catch{return null;}}));
+  devotionals=results.filter(d=>d&&d.date).sort((a,b)=>b.date.localeCompare(a.date)||a.filename.localeCompare(b.filename));
+  $("status").hidden=true;
+  if(!devotionals.length){$("status").hidden=false;$("status").textContent=TEXT[language].empty;return;}
+  show(devotionals.find(d=>d.filename===hashFile())||devotionals[0],false);renderArchive();
  }catch(e){console.error(e);$("status").hidden=false;$("status").innerHTML=`<p class="error">${esc(TEXT[language].failed)}</p>`;}
 }
-$("englishBtn").addEventListener("click",()=>{language="en";applyLanguage();});$("myanmarBtn").addEventListener("click",()=>{language="my";applyLanguage();});
-$("latestBtn").addEventListener("click",()=>{if(devotionals[0]){show(devotionals[0]);window.scrollTo({top:0,behavior:"smooth"});}});
+$("englishBtn").addEventListener("click",()=>{language="en";applyLanguage();});
+$("myanmarBtn").addEventListener("click",()=>{language="my";applyLanguage();});
+$("latestBtn").addEventListener("click",()=>{if(devotionals[0]){show(devotionals[0]);$("devotional").scrollIntoView({behavior:"smooth",block:"start"});}});
 $("archiveToggle").addEventListener("click",()=>{$("archive").hidden=!$("archive").hidden;if(!$("archive").hidden)$("archive").scrollIntoView({behavior:"smooth",block:"start"});});
 $("searchInput").addEventListener("input",()=>{$("archive").hidden=false;renderArchive();});
 window.addEventListener("hashchange",()=>{const d=devotionals.find(x=>x.filename===hashFile());if(d)show(d,false);});
-load();
+$("year").textContent=new Date().getFullYear();
+applyLanguage();load();
 })();
 </script>
 </body>
