@@ -25,6 +25,23 @@ reflection: >
   အဲဒီအချိန်မှာ ကျွန်တော် သင်ယူမိတာက၊ ကိုယ်မသိသေးတဲ့အရာတွေ ရှိနေတယ်ဆိုတာကို ဝန်ခံပြီး ဘုရားသခင်ရဲ့ စကားကို ယုံကြည်နာခံတတ်ဖို့ လိုအပ်တယ် ဆိုတာပါပဲ။ 
 
   ဘုရားသင်ရဲ့စကားကို ယုံကြည်နာခံခြင်းက၊ အတွေ့အကြုံနဲ့ တတ်သိမှုထက် ပိုအရေးကြီးတယ်။ 
+truth_en: >-
+  God's Word is more trustworthy than our personal experience.
+  When we obey His Word, we make room for Him to work beyond
+  our own understanding.
+
+truth_my: >-
+  ဘုရားသခင်၏ နှုတ်ကပတ်တော်သည် ကျွန်ုပ်တို့၏ ကိုယ်ပိုင်အတွေ့အကြုံထက်
+  ပို၍ ယုံကြည်စိတ်ချထိုက်ပါသည်။ ကိုယ်တော်၏ နှုတ်ကပတ်တော်ကို နာခံသောအခါ
+  ကျွန်ုပ်တို့၏ နားလည်မှုထက် ကျော်လွန်၍ ကိုယ်တော် လုပ်ဆောင်နိုင်ပါသည်။
+
+decision_en: >-
+  I will trust God's Word above my own experience and obey Him
+  even when I do not fully understand.
+
+decision_my: >-
+  ကျွန်ုပ် အပြည့်အဝ နားမလည်သည့်အခါ၌ပင် မိမိ၏ အတွေ့အကြုံထက်
+  ဘုရားသခင်၏ နှုတ်ကပတ်တော်ကို ယုံကြည်ပြီး နာခံပါမည်။
 application: >-
   •	Am I still living under the weight of past disappointments, or am I willing
   to trust God again?
