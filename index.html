@@ -247,7 +247,7 @@ function show(d,updateHash=true){
   verse="ရှိမုန်ကလည်း၊ “သခင်၊ အကျွန်ုပ်တို့သည် တစ်ညလုံး ပင်ပန်းစွာ လုပ်ဆောင်သော်လည်း ဘာမျှမရပါ။ သို့သော် ကိုယ်တော်မိန့်တော်မူသောကြောင့် ပိုက်ကွန်ကို ချပါမည်” ဟု ပြန်လျှောက်လေ၏။";
  }
  const reference=verse?`<p class="scripture-reference">${esc(verse)}</p>`:"";
- const reference=verse?`<p class="scripture-reference">${esc(verse)}</p>`:"";
+ const verseBlock=scripture?`<section><h3>${esc(TEXT[language].verse)}</h3>${reference}<div class="verse">${esc(contentText(scripture))}</div></section>`:"";
  $("devotionalCard").innerHTML=`<p class="date">${esc(dateLabel(d.date))}${d.day?" · "+esc(language==="my"?"နေ့ "+d.day:"Day "+d.day):""}</p><h2 class="devotional-title">${esc(title)}</h2>${verseBlock}${block(TEXT[language].reflection,localized(d,"reflection"))}${block(TEXT[language].truth,localized(d,"truth"),"truth")}${block(TEXT[language].application,localized(d,"application"))}${block(TEXT[language].decision,localized(d,"decision"),"decision")}${block(TEXT[language].prayer,localized(d,"prayer"))}`;
  $("devotionalCard").hidden=false;$("status").hidden=true;if(updateHash&&d.filename)history.replaceState(null,"",`#devotional=${encodeURIComponent(d.filename)}`);
 }
