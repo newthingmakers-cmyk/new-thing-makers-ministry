@@ -4,7 +4,8 @@ title_en: "Becoming Like Jesus"
 title_my: "ကိုယ်တော်နည်းတူဖြစ်လိုပါ၏"
 verse_en: "Luke 6:35"
 verse_my: "ရှင်လုကာ ၆:၃၅"
-
+scripture_en: "Love your enemies, do good to them, and lend to them without expecting to get anything back."
+scripture_my: "ရန်သူတို့ကို ချစ်ကြလော့။ ကျေးဇူးပြုကြလော့။ ချေးငှားကြလော့။ ထိုသို့ပြုလျှင် သင်တို့အကျိုးကြီးလိမ့်မည်။ အမြင့်ဆုံးသောဘုရား၏သား ဖြစ်ကြလိမ့်မည်။"
 reflection_en: |
   There was a time when I found it difficult to forgive those who had hurt me. When they faced difficulties, I sometimes felt satisfaction in my heart. But as I read God's Word about loving my enemies and doing good to those who hate me, I realized that my attitude was not pleasing to God. I repented before Him.
 
