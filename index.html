@@ -273,7 +273,26 @@ async function load(){
   const r=await fetch(API,{headers:{"Accept":"application/vnd.github+json"}});if(!r.ok)throw Error("GitHub API "+r.status);
   const files=await r.json(),md=files.filter(f=>f.type==="file"&&f.name.toLowerCase().endsWith(".md"));
   const results=await Promise.all(md.map(async file=>{try{const r=await fetch(file.download_url);if(!r.ok)return null;const text=await r.text();return normalize(parseFrontMatter(text),file.name,file.download_url,text);}catch{return null;}}));
-  devotionals=results.filter(d=>d&&d.date).sort((a,b)=>b.date.localeCompare(a.date)||a.filename.localeCompare(b.filename));
+  const parts = new Intl.DateTimeFormat("en-CA", {
+  timeZone: "Asia/Kuala_Lumpur",
+  year: "numeric",
+  month: "2-digit",
+  day: "2-digit",
+  hour: "2-digit",
+  hourCycle: "h23"
+}).formatToParts(new Date());
+
+const now = Object.fromEntries(parts.map(p => [p.type, p.value]));
+const today = `${now.year}-${now.month}-${now.day}`;
+const publishReady = Number(now.hour) >= 6;
+
+devotionals = results
+  .filter(d => d && d.date &&
+    (d.date < today || (d.date === today && publishReady)))
+  .sort((a, b) =>
+    b.date.localeCompare(a.date) ||
+    a.filename.localeCompare(b.filename)
+  );
   $("status").hidden=true;
   if(!devotionals.length){$("status").hidden=false;$("status").textContent=TEXT[language].empty;return;}
   show(devotionals.find(d=>d.filename===hashFile())||devotionals[0],false);renderArchive();
