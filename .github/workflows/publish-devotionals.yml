@@ -1,0 +1,80 @@
+name: Publish Daily Devotionals
+
+on:
+  schedule:
+    # 06:00 Malaysia time (UTC+8) = 22:00 UTC on the previous day
+    - cron: "0 22 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-devotional-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Publish scheduled devotionals
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from datetime import datetime
+          from zoneinfo import ZoneInfo
+          import re
+          import subprocess
+
+          root = Path(".")
+          devotional_dir = root / "devotionals"
+          now = datetime.now(ZoneInfo("Asia/Kuala_Lumpur"))
+          today = now.date().isoformat()
+
+          if not devotional_dir.exists():
+              raise SystemExit("The devotionals folder was not found.")
+
+          # Keep future-dated Markdown files in place.
+          # The website's date filter controls when each entry appears.
+          # Commit a small publication marker so GitHub Pages rebuilds daily.
+          marker = root / ".last-devotional-publish"
+          marker.write_text(
+              f"Last scheduled run: {now.isoformat()}\n"
+              f"Malaysia date: {today}\n",
+              encoding="utf-8"
+          )
+
+          subprocess.run(
+              ["git", "config", "user.name", "github-actions[bot]"],
+              check=True
+          )
+          subprocess.run(
+              ["git", "config", "user.email",
+               "41898282+github-actions[bot]@users.noreply.github.com"],
+              check=True
+          )
+          subprocess.run(["git", "add", ".last-devotional-publish"], check=True)
+
+          result = subprocess.run(
+              ["git", "diff", "--cached", "--quiet"],
+              check=False
+          )
+
+          if result.returncode == 1:
+              subprocess.run(
+                  ["git", "commit", "-m", "Run daily devotional publishing"],
+                  check=True
+              )
+              subprocess.run(["git", "push", "origin", "main"], check=True)
+          elif result.returncode != 0:
+              raise SystemExit("Could not inspect staged changes.")
+
+          print(f"Scheduled devotional check completed for {today}.")
+          PY
