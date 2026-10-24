@@ -185,8 +185,8 @@ function splitLegacy(value){if(!value)return{en:"",my:""};const m=myanmarRegex.e
 function parseFrontMatter(text){
  const normalized=text.replace(/^\uFEFF/,"").replace(/\r\n/g,"\n");
  const match=normalized.match(/^---\s*\n([\s\S]*?)\n---(?:\s*\n|$)/);
- if(!match)return{};
- const lines=match[1].split("\n"),data={};
+const source = match ? match[1] : normalized;
+const lines = source.split("\n"), data = {};
  let block=null,listKey=null,scalarKey=null;
  for(const line of lines){
   const field=line.match(/^([A-Za-z0-9_-]+):(?:\s*(.*))?$/);
