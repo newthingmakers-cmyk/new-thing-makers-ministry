@@ -5,7 +5,12 @@ title_my: "ကိုယ်တော်နည်းတူဖြစ်လိုပ
 verse_en: "Luke 6:35"
 verse_my: "ရှင်လုကာ ၆:၃၅"
 
-reflection_en: ""
+reflection_en: |
+  There was a time when I found it difficult to forgive those who had hurt me. When they faced difficulties, I sometimes felt satisfaction in my heart. But as I read God's Word about loving my enemies and doing good to those who hate me, I realized that my attitude was not pleasing to God. I repented before Him.
+
+  As I received God's love, He began to heal the pain and bitterness within me. His love gave me strength to forgive those who had hurt me. I learned that the love we receive from God should also flow through us to others.
+
+  I want to become more like Jesus—a person who loves others, forgives those who hurt me, and does good even to those who treat me badly.
 
 reflection_my: |
   တစ်ခါက ကျွန်တော့်ကို နာကျင်စေတဲ့သူတွေကို ခွင့်လွှတ်ဖို့ အရမ်းခက်ခဲခဲ့တယ်။ ခွင့်လွှတ်ရမယ်ဆိုတာ သိပေမဲ့၊ နာကျင်ခါးသီးမှုက ရှိနေတော့ အဲဒီအရာထဲကနေ မလွတ်မြောက်နိုင်ဘူး။ သူတို့မှာ အခက်အခဲတွေ၊ အဆင်မပြေမှုတွေ ကြုံနေပြီဆိုရင် အားရကျေနပ်မှုက အလိုလို ဖြစ်နေတယ်။ အဲဒီလို စိတ်နှလုံးမျိုးကို ဘုရားသခင် မနှစ်သက်ဘူးဆိုတာ သိလို့ အကြိမ်ကြိမ် သတိထားပေမဲ့၊ ဘယ်လိုမှ မပြောင်းလဲနိုင်ခဲ့ဘူး။
@@ -16,16 +21,19 @@ reflection_my: |
 
   အခုတော့ ဘုရားသားသမီးတစ်ယောက်အနေနဲ့ ကိုယ်တော်ရဲ့မေတ္တာကို ခံယူရုံမျှမကဘဲ၊ ကိုယ်တော်နည်းတူ ချစ်တတ်တဲ့သူ၊ ခွင့်လွှတ်တတ်တဲ့သူ၊ ကျေးဇူးပြုတတ်တဲ့သူတစ်ယောက် ဖြစ်ချင်ပါတယ်။
 
-application_en: ""
+application_en: |
+  Is it still difficult for me to forgive those who have hurt me? How do I feel when they face difficulties?
+
+  Am I showing God's love and kindness to those who have hurt me?
 
 application_my: |
   ငါ့ကို နာကျင်စေခဲ့သူတွေကို ခွင့်လွှတ်ဖို့ ခက်ခဲနေသေးသလား။ သူတို့ ဒုက္ခရောက်တဲ့အခါ ငါ့စိတ်ထဲမှာ ဘယ်လိုခံစားချက်တွေ ဖြစ်ပေါ်လာသလဲ။
   ငါ့ကို နာကျင်စေခဲ့သူတွေအပေါ် ဘုရားသခင်ရဲ့ ချစ်ခြင်းမေတ္တာနဲ့ ကျေးဇူးပြုနေမိရဲ့လား။
 
-decision_en: ""
+decision_en: "From today onward, I will seek to love, forgive, and do good to others, just as Jesus does."
 
 decision_my: "ယနေ့မှစ၍ ဘုရားသခင်၏မေတ္တာကို ခံယူရုံသာမက၊ ကိုယ်တော်နည်းတူ သူတစ်ပါးကို ချစ်ခွင့်လွှတ်ပြီး ကျေးဇူးပြုတတ်သူတစ်ယောက် ဖြစ်လာရန် ကြိုးစားမည်။"
 
-prayer_en: ""
+prayer_en: "Heavenly Father, remove the pain and bitterness from my heart. Give me strength to love and forgive those who have hurt me. Help me become a person who loves others and shows kindness, just as You do. In Jesus' name, Amen."
 
 prayer_my: "အဖဘုရား၊ ကျွန်တော့်နှလုံးသားထဲက နာကျင်မှုနဲ့ ခါးသီးမှုတွေကို ဖယ်ရှားပေးတော်မူပါ။ ကျွန်တော့်ကို နာကျင်စေသူတွေကို ခွင့်လွှတ်ချစ်ခင်နိုင်ဖို့ ခွန်အားပေးပြီး ကိုယ်တော်နည်းတူ ချစ်တတ်၊ ကျေးဇူးပြုတတ်သူ ဖြစ်စေတော်မူပါ။ သခင်ယေရှု၏ နာမတော်၌ ဆုတောင်းပါ၏။ အာမင်။"
