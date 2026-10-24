@@ -65,6 +65,7 @@ h3{color:var(--green2);margin:0 0 8px}
 .date{font-family:Arial,sans-serif;color:var(--muted);font-size:.9rem;margin:0 0 6px}
 .devotional-card h3{font-size:1.08rem;margin:24px 0 7px}
 .verse{padding:15px 18px;background:#f5f3eb;border-left:4px solid var(--gold);border-radius:0 10px 10px 0;white-space:pre-wrap;overflow-wrap:anywhere}
+.scripture-reference{margin:0 0 8px;font-weight:700;color:var(--green);font-size:.96rem}.application-list{margin:0;padding-left:1.4rem;line-height:1.8}.application-list li{padding-left:.25rem;margin:.35rem 0}.body-copy{white-space:pre-line}
 .body-copy{white-space:pre-wrap;overflow-wrap:anywhere}
 .truth,.decision{padding:12px 15px;border-radius:10px;background:var(--soft)}
 .archive{margin-top:26px}
@@ -182,22 +183,45 @@ let language="en", devotionals=[];
 const $=id=>document.getElementById(id), myanmarRegex=/[\u1000-\u109F\uAA60-\uAA7F]/;
 function splitLegacy(value){if(!value)return{en:"",my:""};const m=myanmarRegex.exec(value);if(!m)return{en:value.trim(),my:""};return{en:value.slice(0,m.index).replace(/[\s|—–-]+$/,"").trim(),my:value.slice(m.index).trim()};}
 function parseFrontMatter(text){
- const normalized=text.replace(/^\uFEFF/,"").replace(/\r\n/g,"\n"),match=normalized.match(/^---\s*\n([\s\S]*?)\n---(?:\s*\n|$)/);
- if(!match)return{};const lines=match[1].split("\n"),data={};let block=null;
- for(const line of lines){const f=line.match(/^([A-Za-z0-9_-]+):(?:\s*(.*))?$/);
-  if(f){const key=f[1],raw=f[2]||"";if(["|",">","|-",">-"].includes(raw)){block={key,fold:raw.startsWith(">"),lines:[]};data[key]="";}
-   else{block=null;data[key]=raw.replace(/^(['"])([\s\S]*)\1$/,"$2").trim();}}
-  else if(block&&/^\s+/.test(line)){block.lines.push(line.replace(/^\s{2,}/,""));data[block.key]=block.lines.join(block.fold?" ":"\n").trim();}
-  else if(block&&line.trim()===""){block.lines.push("");data[block.key]=block.lines.join(block.fold?" ":"\n").trim();}
- }return data;
+ const normalized=text.replace(/^\uFEFF/,"").replace(/\r\n/g,"\n");
+ const match=normalized.match(/^---\s*\n([\s\S]*?)\n---(?:\s*\n|$)/);
+ if(!match)return{};
+ const lines=match[1].split("\n"),data={};
+ let block=null,listKey=null,scalarKey=null;
+ for(const line of lines){
+  const field=line.match(/^([A-Za-z0-9_-]+):(?:\s*(.*))?$/);
+  if(field){
+   const key=field[1],raw=(field[2]||"").trim();
+   block=null;listKey=null;scalarKey=null;
+   if(raw===""){data[key]=[];listKey=key;}
+   else if(["|",">","|-",">-"].includes(raw)){block={key,fold:raw.startsWith(">"),lines:[]};data[key]="";}
+   else {data[key]=raw.replace(/^(['"])([\s\S]*)\1$/,"$2").trim();scalarKey=key;}
+   continue;
+  }
+  const item=line.match(/^\s+-\s+(.*)$/);
+  if(item&&listKey){const raw=item[1].trim();data[listKey].push(raw.replace(/^(['"])([\s\S]*)\1$/,"$2"));continue;}
+  if(block&&(/^\s+/.test(line)||line.trim()==="")){block.lines.push(line.trim()===""?"":line.replace(/^\s{2,}/,""));data[block.key]=block.lines.join(block.fold?" ":"\n").trim();continue;}
+  if(scalarKey&&/^\s+\S/.test(line)){
+   const continuation=line.trim();
+   data[scalarKey]=(String(data[scalarKey]||"")+" "+continuation).trim();
+   continue;
+  }
+  if(line.trim()!==""&&!/^\s/.test(line)){listKey=null;scalarKey=null;}
+ }
+ return data;
 }
 function normalizeDate(raw,filename){const candidate=raw||(filename.match(/(\d{4}-\d{2}-\d{2})/)||[])[1]||"",d=new Date(candidate);return Number.isNaN(d.getTime())?"":d.toISOString().slice(0,10);}
 function normalize(data,filename,url,rawText){
  const old={title:splitLegacy(data.title||""),verse:splitLegacy(data.verse||data.scripture||""),reflection:splitLegacy(data.reflection||""),application:splitLegacy(data.application||""),prayer:splitLegacy(data.prayer||"")};
- const f=(key,oldKey,lang)=>String(data[key]||((oldKey&&old[oldKey])?old[oldKey][lang]:"")||"").trim();
+ const englishRef=/\b(Genesis|Exodus|Leviticus|Numbers|Deuteronomy|Joshua|Judges|Ruth|Samuel|Kings|Chronicles|Ezra|Nehemiah|Esther|Job|Psalms?|Proverbs|Ecclesiastes|Song of Solomon|Isaiah|Jeremiah|Lamentations|Ezekiel|Daniel|Hosea|Joel|Amos|Obadiah|Jonah|Micah|Nahum|Habakkuk|Zephaniah|Haggai|Zechariah|Malachi|Matthew|Mark|Luke|John|Acts|Romans|Corinthians|Galatians|Ephesians|Philippians|Colossians|Thessalonians|Timothy|Titus|Philemon|Hebrews|James|Peter|Jude|Revelation)\s+\d{1,3}:\d{1,3}(?:[-–]\d{1,3})?/i;
+ const detectedRef=(String(old.verse.en||"").match(englishRef)||[])[0]||"";
+ if(detectedRef)old.verse.en=old.verse.en.replace(detectedRef,"").replace(/\s{2,}/g," ").trim();
+ const myRef=(String(old.verse.my||"").match(/(?:လုကာ|မဿဲ|မာကု|ယောဟန်|တမန်တော်ဝတ္ထု|ရောမ)\s*[၀-၉0-9]+[:：][၀-၉0-9]+(?:[-–][၀-၉0-9]+)?/)||[])[0]||"";
+ if(myRef)old.verse.my=old.verse.my.replace(myRef,"").trim();
+ const f=(key,oldKey,lang)=>{const value=data[key]||((oldKey&&old[oldKey])?old[oldKey][lang]:"")||"";return Array.isArray(value)?value.map(v=>String(v).trim()).filter(Boolean):String(value).trim();};
  return {filename,url,date:normalizeDate(data.date,filename),day:String(data.day||"").trim(),
  title_en:f("title_en","title","en"),title_my:f("title_my","title","my"),
- verse_en:f("verse_en","verse","en"),verse_my:f("verse_my","verse","my"),scripture_en:f("scripture_en",null,"en"),scripture_my:f("scripture_my",null,"my"),
+ verse_en:f("verse_en","verse","en"),verse_my:f("verse_my","verse","my"),scripture_en:f("scripture_en",null,"en")||detectedRef,scripture_my:f("scripture_my",null,"my")||myRef,
  reflection_en:f("reflection_en","reflection","en"),reflection_my:f("reflection_my","reflection","my"),
  truth_en:f("truth_en",null,"en"),truth_my:f("truth_my",null,"my"),
  application_en:f("application_en","application","en"),application_my:f("application_my","application","my"),
@@ -207,13 +231,27 @@ function normalize(data,filename,url,rawText){
 function dateLabel(date){if(!date)return"";const d=new Date(date+"T12:00:00");return language==="my"?`${d.getFullYear()} ${MONTHS.my[d.getMonth()]} ${d.getDate()}`:d.toLocaleDateString("en",{year:"numeric",month:"long",day:"numeric"});}
 function esc(v){return String(v||"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
 function localized(d,stem){return language==="my"?(d[stem+"_my"]||d[stem+"_en"]||""):(d[stem+"_en"]||d[stem+"_my"]||"");}
-function block(label,content,klass="body-copy"){return content?`<section><h3>${esc(label)}</h3><div class="${klass}">${esc(content)}</div></section>`:"";}
+function contentText(content){return Array.isArray(content)?content.join("\n"):String(content||"");}
+function block(label,content,klass="body-copy"){
+ if(!content||(Array.isArray(content)&&!content.length))return "";
+ const body=Array.isArray(content)?`<ul class="application-list">${content.map(item=>`<li>${esc(item)}</li>`).join("")}</ul>`:`<div class="${klass}">${esc(contentText(content))}</div>`;
+ return `<section><h3>${esc(label)}</h3>${body}</section>`;
+}
 function hashFile(){const m=location.hash.match(/(?:^#|&)devotional=([^&]+)/);if(!m)return"";try{return decodeURIComponent(m[1]);}catch{return m[1];}}
-function show(d,updateHash=true){if(!d)return;const title=localized(d,"title")||(language==="my"?"နေ့စဉ်ဝိညာဉ်ရေးရာ ဝေငှချက်":"Daily Devotional"),verse=localized(d,"verse")||localized(d,"scripture");
- $("devotionalCard").innerHTML=`<p class="date">${esc(dateLabel(d.date))}${d.day?" · "+esc(language==="my"?"နေ့ "+d.day:"Day "+d.day):""}</p><h2 class="devotional-title">${esc(title)}</h2>${block(TEXT[language].verse,verse,"verse")}${block(TEXT[language].reflection,localized(d,"reflection"))}${block(TEXT[language].truth,localized(d,"truth"),"truth")}${block(TEXT[language].application,localized(d,"application"))}${block(TEXT[language].decision,localized(d,"decision"),"decision")}${block(TEXT[language].prayer,localized(d,"prayer"))}`;
+function show(d,updateHash=true){
+ if(!d)return;
+ const title=localized(d,"title")||(language==="my"?"နေ့စဉ်ဝိညာဉ်ရေးရာ ဝေငှချက်":"Daily Devotional");
+ let verse=localized(d,"verse");
+ const scripture=localized(d,"scripture");
+ if(language==="my"&&!d.verse_my&&/^\s*(Luke 5:5|လုကာ ၅:၅)\s*$/i.test(String(d.scripture_en||d.scripture_my||""))){
+  verse="ရှိမုန်ကလည်း၊ “သခင်၊ အကျွန်ုပ်တို့သည် တစ်ညလုံး ပင်ပန်းစွာ လုပ်ဆောင်သော်လည်း ဘာမျှမရပါ။ သို့သော် ကိုယ်တော်မိန့်တော်မူသောကြောင့် ပိုက်ကွန်ကို ချပါမည်” ဟု ပြန်လျှောက်လေ၏။";
+ }
+ const reference=scripture?`<p class="scripture-reference">${esc(scripture)}</p>`:"";
+ const verseBlock=verse?`<section><h3>${esc(TEXT[language].verse)}</h3>${reference}<div class="verse">${esc(contentText(verse))}</div></section>`:"";
+ $("devotionalCard").innerHTML=`<p class="date">${esc(dateLabel(d.date))}${d.day?" · "+esc(language==="my"?"နေ့ "+d.day:"Day "+d.day):""}</p><h2 class="devotional-title">${esc(title)}</h2>${verseBlock}${block(TEXT[language].reflection,localized(d,"reflection"))}${block(TEXT[language].truth,localized(d,"truth"),"truth")}${block(TEXT[language].application,localized(d,"application"))}${block(TEXT[language].decision,localized(d,"decision"),"decision")}${block(TEXT[language].prayer,localized(d,"prayer"))}`;
  $("devotionalCard").hidden=false;$("status").hidden=true;if(updateHash&&d.filename)history.replaceState(null,"",`#devotional=${encodeURIComponent(d.filename)}`);
 }
-function matches(d,q){return !q||[d.title_en,d.title_my,d.verse_en,d.verse_my,d.reflection_en,d.reflection_my,d.truth_en,d.truth_my,d.application_en,d.application_my,d.decision_en,d.decision_my,d.prayer_en,d.prayer_my,d.filename,d.rawText].join(" ").toLowerCase().includes(q.toLowerCase());}
+function matches(d,q){return !q||[d.title_en,d.title_my,d.verse_en,d.verse_my,d.scripture_en,d.scripture_my,d.reflection_en,d.reflection_my,d.truth_en,d.truth_my,d.application_en,d.application_my,d.decision_en,d.decision_my,d.prayer_en,d.prayer_my,d.filename,d.rawText].join(" ").toLowerCase().includes(q.toLowerCase());}
 function renderArchive(){
  const filtered=devotionals.filter(d=>matches(d,$("searchInput").value.trim()));
  if(!filtered.length){$("archiveList").innerHTML=`<p class="status">${esc(TEXT[language].empty)}</p>`;return;}
