@@ -210,6 +210,19 @@ const lines = source.split("\n"), data = {};
  }
  return data;
 }
+function getMalaysiaDateTime(){
+ const parts=new Intl.DateTimeFormat("en-CA",{
+  timeZone:"Asia/Kuala_Lumpur",
+  year:"numeric",month:"2-digit",day:"2-digit",
+  hour:"2-digit",minute:"2-digit",hourCycle:"h23"
+ }).formatToParts(new Date());
+ const values=Object.fromEntries(parts.map(part=>[part.type,part.value]));
+ return {
+  date:`${values.year}-${values.month}-${values.day}`,
+  hour:Number(values.hour),
+  minute:Number(values.minute)
+ };
+}
 function normalizeDate(raw,filename){const candidate=raw||(filename.match(/(\d{4}-\d{2}-\d{2})/)||[])[1]||"",d=new Date(candidate);return Number.isNaN(d.getTime())?"":d.toISOString().slice(0,10);}
 function normalize(data,filename,url,rawText){
  const old={title:splitLegacy(data.title||""),verse:splitLegacy(data.verse||data.scripture||""),reflection:splitLegacy(data.reflection||""),application:splitLegacy(data.application||""),prayer:splitLegacy(data.prayer||"")};
@@ -273,26 +286,17 @@ async function load(){
   const r=await fetch(API,{headers:{"Accept":"application/vnd.github+json"}});if(!r.ok)throw Error("GitHub API "+r.status);
   const files=await r.json(),md=files.filter(f=>f.type==="file"&&f.name.toLowerCase().endsWith(".md"));
   const results=await Promise.all(md.map(async file=>{try{const r=await fetch(file.download_url);if(!r.ok)return null;const text=await r.text();return normalize(parseFrontMatter(text),file.name,file.download_url,text);}catch{return null;}}));
-  const parts = new Intl.DateTimeFormat("en-CA", {
-  timeZone: "Asia/Kuala_Lumpur",
-  year: "numeric",
-  month: "2-digit",
-  day: "2-digit",
-  hour: "2-digit",
-  hourCycle: "h23"
-}).formatToParts(new Date());
+  const nowMY = getMalaysiaDateTime();
+  const today = nowMY.date;
+  const publishReady = nowMY.hour >= 6;
 
-const now = Object.fromEntries(parts.map(p => [p.type, p.value]));
-const today = `${now.year}-${now.month}-${now.day}`;
-const publishReady = Number(now.hour) >= 6;
-
-devotionals = results
-  .filter(d => d && d.date &&
-    (d.date < today || (d.date === today && publishReady)))
-  .sort((a, b) =>
-    b.date.localeCompare(a.date) ||
-    a.filename.localeCompare(b.filename)
-  );
+  devotionals = results
+    .filter(d => d && d.date &&
+      (d.date < today || (d.date === today && publishReady)))
+    .sort((a, b) =>
+      b.date.localeCompare(a.date) ||
+      a.filename.localeCompare(b.filename)
+    );
   $("status").hidden=true;
   if(!devotionals.length){$("status").hidden=false;$("status").textContent=TEXT[language].empty;return;}
   show(devotionals.find(d=>d.filename===hashFile())||devotionals[0],false);renderArchive();
@@ -304,7 +308,17 @@ $("latestBtn").addEventListener("click",()=>{if(devotionals[0]){show(devotionals
 $("archiveToggle").addEventListener("click",()=>{$("archive").hidden=!$("archive").hidden;if(!$("archive").hidden)$("archive").scrollIntoView({behavior:"smooth",block:"start"});});
 $("searchInput").addEventListener("input",()=>{$("archive").hidden=false;renderArchive();});
 window.addEventListener("hashchange",()=>{const d=devotionals.find(x=>x.filename===hashFile());if(d)show(d,false);});
-$("year").textContent=new Date().getFullYear();
+// Refresh once Malaysia-local 06:00 has passed, even if this page was
+// left open overnight. This is display scheduling, not a server-side publish.
+ let lastScheduledRefresh="";
+ setInterval(()=>{
+  const nowMY=getMalaysiaDateTime();
+  if(nowMY.hour>=6 && lastScheduledRefresh!==nowMY.date){
+   lastScheduledRefresh=nowMY.date;
+   load();
+  }
+ },30000);
+ $("year").textContent=new Date().getFullYear();
 applyLanguage();load();
 })();
 </script>
