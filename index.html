@@ -245,7 +245,13 @@ function dateLabel(date){if(!date)return"";const d=new Date(date+"T12:00:00");re
 function esc(v){return String(v||"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
 function localized(d,stem){return language==="my"?(d[stem+"_my"]||d[stem+"_en"]||""):(d[stem+"_en"]||d[stem+"_my"]||"");}
 function contentText(content){return Array.isArray(content)?content.join("\n"):String(content||"");}
-function block(label,content,klass="body-copy"){
+function applicationItems(content){
+  return contentText(content)
+    .split(/\r?\n/)
+    .map(item=>item.trim())
+    .filter(Boolean);
+}
+  function block(label,content,klass="body-copy"){
  if(!content||(Array.isArray(content)&&!content.length))return "";
  const body=Array.isArray(content)?`<ul class="application-list">${content.map(item=>`<li>${esc(item)}</li>`).join("")}</ul>`:`<div class="${klass}">${esc(contentText(content))}</div>`;
  return `<section><h3>${esc(label)}</h3>${body}</section>`;
@@ -261,7 +267,7 @@ function show(d,updateHash=true){
  }
  const reference=verse?`<p class="scripture-reference">${esc(verse)}</p>`:"";
  const verseBlock=scripture?`<section><h3>${esc(TEXT[language].verse)}</h3><div class="verse">${esc(contentText(scripture))}</div></section>`:"";
- $("devotionalCard").innerHTML=`<p class="date">${esc(dateLabel(d.date))}${d.day?" · "+esc(language==="my"?"နေ့ "+d.day:"Day "+d.day):""}</p><h2 class="devotional-title">${esc(title)}</h2>${verseBlock}${block(TEXT[language].reflection,localized(d,"reflection"))}${block(TEXT[language].truth,localized(d,"truth"),"truth")}${block(TEXT[language].application,localized(d,"application"))}${block(TEXT[language].decision,localized(d,"decision"),"decision")}${block(TEXT[language].prayer,localized(d,"prayer"))}`;
+ $("devotionalCard").innerHTML=`<p class="date">${esc(dateLabel(d.date))}${d.day?" · "+esc(language==="my"?"နေ့ "+d.day:"Day "+d.day):""}</p><h2 class="devotional-title">${esc(title)}</h2>${verseBlock}${block(TEXT[language].reflection,localized(d,"reflection"))}${block(TEXT[language].truth,localized(d,"truth"),"truth")}${block(TEXT[language].application,applicationItems(localized(d,"application")),"application-list")}${block(TEXT[language].decision,localized(d,"decision"),"decision")}${block(TEXT[language].prayer,localized(d,"prayer"))}`;
  $("devotionalCard").hidden=false;$("status").hidden=true;if(updateHash&&d.filename)history.replaceState(null,"",`#devotional=${encodeURIComponent(d.filename)}`);
 }
 function matches(d,q){return !q||[d.title_en,d.title_my,d.verse_en,d.verse_my,d.scripture_en,d.scripture_my,d.reflection_en,d.reflection_my,d.truth_en,d.truth_my,d.application_en,d.application_my,d.decision_en,d.decision_my,d.prayer_en,d.prayer_my,d.filename,d.rawText].join(" ").toLowerCase().includes(q.toLowerCase());}
