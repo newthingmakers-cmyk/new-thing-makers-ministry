@@ -319,11 +319,34 @@ function exportDevotionalPDF(size,lang){
  if(!win){alert(isMy?"PDF ထုတ်ရန် Pop-up ကို ခွင့်ပြုပေးပါ။":"Please allow pop-ups to create the PDF.");return;}
  win.document.open();
  win.document.write(`<!doctype html><html lang="${isMy?"my":"en"}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${esc(title)} - ${size} PDF</title><style>
- @page{size:${size};margin:16mm}
- *{box-sizing:border-box}body{font-family:${isMy?'"Noto Sans Myanmar","Myanmar Text",sans-serif':'Georgia,serif'};color:#1f2937;line-height:1.7;font-size:11pt;margin:0}
- h1{font-size:22pt;color:#12345a;margin:0 0 14px}h3{font-size:13pt;color:#1d4e89;margin:18px 0 7px;border-bottom:1px solid #e5e7eb;padding-bottom:3px}
- p{margin:5px 0}.date{font:10pt Arial,sans-serif;color:#667085}section{break-inside:avoid;margin-bottom:12px}.verse{background:#f5f3eb;padding:10px;border-left:3px solid #d7b66d;white-space:pre-wrap}.truth,.decision{background:#eff4f8;padding:10px;border-radius:6px;white-space:pre-wrap}.body-copy{white-space:pre-wrap;overflow-wrap:anywhere}ul{padding-left:22px;margin:5px 0}li{margin:3px 0;overflow-wrap:anywhere}footer{border-top:1px solid #ddd;margin-top:22px;padding-top:8px;font-size:9pt;color:#667085;text-align:center}
- </style></head><body>${content}<script>window.addEventListener('load',()=>setTimeout(()=>window.print(),300));<\/script></body></html>`);
+ @page{size:${size};margin:${size==="A4"?"9mm":"7mm"}}
+ *{box-sizing:border-box}
+ body{font-family:${isMy?'"Noto Sans Myanmar","Myanmar Text",sans-serif':'Georgia,serif'};color:#1f2937;line-height:1.32;font-size:${size==="A4"?"9":"7.5"}pt;margin:0}
+ h1{font-size:1.65em;line-height:1.2;color:#12345a;margin:0 0 .45em}
+ h3{font-size:1.12em;line-height:1.2;color:#1d4e89;margin:.75em 0 .3em;border-bottom:1px solid #e5e7eb;padding-bottom:2px}
+ p{margin:.2em 0}.date{font: .85em Arial,sans-serif;color:#667085}
+ section{break-inside:avoid;margin-bottom:.55em}
+ .verse{background:#f5f3eb;padding:.5em;border-left:3px solid #d7b66d;white-space:pre-wrap}
+ .truth,.decision{background:#eff4f8;padding:.5em;border-radius:5px;white-space:pre-wrap}
+ .body-copy{white-space:pre-wrap;overflow-wrap:anywhere}
+ ul{padding-left:1.4em;margin:.25em 0}li{margin:.12em 0;overflow-wrap:anywhere}
+ footer{border-top:1px solid #ddd;margin-top:.7em;padding-top:.3em;font-size:.75em;color:#667085;text-align:center}
+ </style></head><body>${content}<script>
+ window.addEventListener('load',()=>{
+   const isA4=${size==="A4"?"true":"false"};
+   const usableHeight=isA4?1000:740;
+   const minFont=isA4?6.8:5.8;
+   let font=parseFloat(getComputedStyle(document.body).fontSize)*72/96;
+   const fit=()=>{
+     let tries=0;
+     while(document.body.scrollHeight>usableHeight && font>minFont && tries<30){
+       font-=0.25;document.body.style.fontSize=font+'pt';tries++;
+     }
+     setTimeout(()=>window.print(),250);
+   };
+   setTimeout(fit,100);
+ });
+ <\/script></body></html>`);
  win.document.close();
 }
 function matches(d,q){return !q||[d.title_en,d.title_my,d.verse_en,d.verse_my,d.scripture_en,d.scripture_my,d.reflection_en,d.reflection_my,d.truth_en,d.truth_my,d.application_en,d.application_my,d.decision_en,d.decision_my,d.prayer_en,d.prayer_my,d.filename,d.rawText].join(" ").toLowerCase().includes(q.toLowerCase());}
