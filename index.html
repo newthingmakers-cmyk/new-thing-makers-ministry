@@ -154,7 +154,7 @@ details.year>summary{cursor:pointer;padding:12px 16px;background:#f1f4f0;color:v
     <div class="devotional-tools">
       <input class="search" id="searchInput" type="search" placeholder="Search devotionals…" aria-label="Search devotionals">
       <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="plain-button" id="latestBtn" data-en="Latest devotional" data-my="နောက်ဆုံးဝေငှချက်"></button><button class="plain-button" id="archiveToggle" data-en="Archive" data-my="မှတ်တမ်း"></button></div>
-      <div class="pdf-tools"><button class="pdf-button" id="pdfA4Btn" type="button" data-en="Download A4 PDF" data-my="A4 PDF ထုတ်ရန်"></button><button class="pdf-button" id="pdfA5Btn" type="button" data-en="Download A5 PDF" data-my="A5 PDF ထုတ်ရန်"></button></div>
+      <div class="pdf-tools"><button class="pdf-button" id="pdfA4EnBtn" type="button" data-en="English PDF (A4)" data-my="English PDF (A4)"></button><button class="pdf-button" id="pdfA5EnBtn" type="button" data-en="English PDF (A5)" data-my="English PDF (A5)"></button><button class="pdf-button" id="pdfA4MyBtn" type="button" data-en="မြန်မာ PDF (A4)" data-my="မြန်မာ PDF (A4)"></button><button class="pdf-button" id="pdfA5MyBtn" type="button" data-en="မြန်မာ PDF (A5)" data-my="မြန်မာ PDF (A5)"></button></div>
     </div>
     <div id="status" class="status" role="status">Loading devotionals…</div>
     <article id="devotionalCard" class="devotional-card" hidden></article>
@@ -282,42 +282,50 @@ function show(d,updateHash=true){
 }
 
 function pdfEscape(value){return esc(contentText(value)).replace(/\n/g,"<br>");}
-function pdfSection(labelEn,labelMy,valueEn,valueMy,kind="body-copy"){
- const en=contentText(valueEn).trim(),my=contentText(valueMy).trim();
- if(!en&&!my)return "";
- return `<section><h3>${esc(labelEn)} / ${esc(labelMy)}</h3>${en?`<div class="${kind}"><strong>English</strong><br>${pdfEscape(en)}</div>`:""}${my?`<div class="${kind}"><strong>မြန်မာ</strong><br>${pdfEscape(my)}</div>`:""}</section>`;
-}
-function exportDevotionalPDF(size){
+function exportDevotionalPDF(size,lang){
  const d=devotionals.find(item=>item.filename===hashFile())||devotionals[0];
- if(!d){alert(language==="my"?"ဝေငှချက် မတွေ့ပါ။":"No devotional is available to export.");return;}
- const titleEn=d.title_en||d.title_my||"Daily Devotional";
- const titleMy=d.title_my||d.title_en||"နေ့စဉ်ဝိညာဉ်ရေးရာ ဝေငှချက်";
- const appEn=applicationItems(d.application_en||"");
- const appMy=applicationItems(d.application_my||"");
- const list=items=>items.length?`<ul>${items.map(item=>`<li>${pdfEscape(item)}</li>`).join("")}</ul>`:"";
+ if(!d){alert(lang==="my"?"ဝေငှချက် မတွေ့ပါ။":"No devotional is available to export.");return;}
+ const isMy=lang==="my";
+ const pick=(en,my)=>contentText(isMy?(my||""):(en||"")).trim();
+ const title=pick(d.title_en,d.title_my)||(isMy?"နေ့စဉ်ဝိညာဉ်ရေးရာ ဝေငှချက်":"Daily Devotional");
+ const verse=pick(d.verse_en,d.verse_my);
+ const scripture=pick(d.scripture_en,d.scripture_my);
+ const reflection=pick(d.reflection_en,d.reflection_my);
+ const truth=pick(d.truth_en,d.truth_my);
+ const application=applicationItems(pick(d.application_en,d.application_my));
+ const decision=pick(d.decision_en,d.decision_my);
+ const prayer=pick(d.prayer_en,d.prayer_my);
+ const labels=isMy?{
+   verse:"ကျမ်းချက်",scripture:"ကျမ်းညွှန်း",reflection:"ဆင်ခြင်အောက်မေ့ရန်",
+   truth:"မှတ်သားရမည့် သမ္မာတရား",application:"လက်တွေ့အသုံးချရန်",
+   decision:"ကျွန်ုပ်၏ဆုံးဖြတ်ချက်",prayer:"ဆုတောင်းခြင်း"
+ }:{
+   verse:"Bible Verse",scripture:"Scripture Reference",reflection:"Reflection",
+   truth:"Truth to Remember",application:"Application",decision:"My Decision",prayer:"Prayer"
+ };
+ const section=(label,value,kind="body-copy")=>value?`<section><h3>${esc(label)}</h3><div class="${kind}">${pdfEscape(value)}</div></section>`:"";
+ const list=application.length?`<ul>${application.map(item=>`<li>${pdfEscape(item)}</li>`).join("")}</ul>`:"";
  const content=`
-   <header><p class="date">${esc(d.date||"")}${d.day?" · Day "+esc(d.day):""}</p>
-   <h1>${esc(titleEn)}</h1><h2>${esc(titleMy)}</h2></header>
-   ${pdfSection("Bible verse","ကျမ်းချက်",d.verse_en,d.verse_my,"verse")}
-   ${d.scripture_en||d.scripture_my?`<section><h3>Scripture reference / ကျမ်းညွှန်း</h3>${d.scripture_en?`<p><strong>English:</strong> ${esc(d.scripture_en)}</p>`:""}${d.scripture_my?`<p><strong>မြန်မာ:</strong> ${esc(d.scripture_my)}</p>`:""}</section>`:""}
-   ${pdfSection("Reflection","ဆင်ခြင်အောက်မေ့ရန်",d.reflection_en,d.reflection_my)}
-   ${pdfSection("Truth to remember","မှတ်သားရမည့် သမ္မာတရား",d.truth_en,d.truth_my,"truth")}
-   ${d.application_en||d.application_my?`<section><h3>Application / လက်တွေ့အသုံးချရန်</h3>${appEn.length?`<strong>English</strong>${list(appEn)}`:""}${appMy.length?`<strong>မြန်မာ</strong>${list(appMy)}`:""}</section>`:""}
-   ${pdfSection("My decision","ကျွန်ုပ်၏ဆုံးဖြတ်ချက်",d.decision_en,d.decision_my,"decision")}
-   ${pdfSection("Prayer","ဆုတောင်းခြင်း",d.prayer_en,d.prayer_my)}
-   <footer>New Thing Makers Ministry · Growing in Christ · Making Disciples · Expanding His Kingdom</footer>`;
+ <header><p class="date">${esc(d.date||"")}${d.day?" · "+(isMy?"နေ့ ":"Day ")+esc(d.day):""}</p><h1>${esc(title)}</h1></header>
+ ${section(labels.verse,verse,"verse")}
+ ${section(labels.scripture,scripture)}
+ ${section(labels.reflection,reflection)}
+ ${section(labels.truth,truth,"truth")}
+ ${application.length?`<section><h3>${esc(labels.application)}</h3>${list}</section>`:""}
+ ${section(labels.decision,decision,"decision")}
+ ${section(labels.prayer,prayer)}
+ <footer>${isMy?"အမှုတော်သစ် ဖော်ဆောင်သူများ":"New Thing Makers Ministry"}${isMy?"":" · Growing in Christ · Making Disciples · Expanding His Kingdom"}</footer>`;
  const win=window.open("","_blank");
- if(!win){alert(language==="my"?"PDF ထုတ်ရန် Pop-up ကို ခွင့်ပြုပေးပါ။":"Please allow pop-ups to create the PDF.");return;}
+ if(!win){alert(isMy?"PDF ထုတ်ရန် Pop-up ကို ခွင့်ပြုပေးပါ။":"Please allow pop-ups to create the PDF.");return;}
  win.document.open();
- win.document.write(`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${esc(titleEn)} - ${size} PDF</title><style>
+ win.document.write(`<!doctype html><html lang="${isMy?"my":"en"}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${esc(title)} - ${size} PDF</title><style>
  @page{size:${size};margin:16mm}
- *{box-sizing:border-box}body{font-family:Georgia,"Noto Serif Myanmar","Myanmar Text",serif;color:#1f2937;line-height:1.65;font-size:11pt;margin:0}
- h1{font-size:22pt;color:#12345a;margin:0 0 5px}h2{font-size:17pt;color:#12345a;margin:0 0 14px}h3{font-size:13pt;color:#1d4e89;margin:18px 0 7px;border-bottom:1px solid #e5e7eb;padding-bottom:3px}
- p{margin:5px 0}.date{font:10pt Arial,sans-serif;color:#667085}section{break-inside:avoid;margin-bottom:12px}.verse{background:#f5f3eb;padding:10px;border-left:3px solid #d7b66d;white-space:pre-wrap}.truth,.decision{background:#eff4f8;padding:10px;border-radius:6px;white-space:pre-wrap}.body-copy{white-space:pre-wrap;overflow-wrap:anywhere}ul{padding-left:22px;margin:5px 0}li{margin:3px 0;overflow-wrap:anywhere}footer{border-top:1px solid #ddd;margin-top:22px;padding-top:8px;font:9pt Arial,sans-serif;color:#667085;text-align:center}
+ *{box-sizing:border-box}body{font-family:${isMy?'"Noto Sans Myanmar","Myanmar Text",sans-serif':'Georgia,serif'};color:#1f2937;line-height:1.7;font-size:11pt;margin:0}
+ h1{font-size:22pt;color:#12345a;margin:0 0 14px}h3{font-size:13pt;color:#1d4e89;margin:18px 0 7px;border-bottom:1px solid #e5e7eb;padding-bottom:3px}
+ p{margin:5px 0}.date{font:10pt Arial,sans-serif;color:#667085}section{break-inside:avoid;margin-bottom:12px}.verse{background:#f5f3eb;padding:10px;border-left:3px solid #d7b66d;white-space:pre-wrap}.truth,.decision{background:#eff4f8;padding:10px;border-radius:6px;white-space:pre-wrap}.body-copy{white-space:pre-wrap;overflow-wrap:anywhere}ul{padding-left:22px;margin:5px 0}li{margin:3px 0;overflow-wrap:anywhere}footer{border-top:1px solid #ddd;margin-top:22px;padding-top:8px;font-size:9pt;color:#667085;text-align:center}
  </style></head><body>${content}<script>window.addEventListener('load',()=>setTimeout(()=>window.print(),300));<\/script></body></html>`);
  win.document.close();
 }
-
 function matches(d,q){return !q||[d.title_en,d.title_my,d.verse_en,d.verse_my,d.scripture_en,d.scripture_my,d.reflection_en,d.reflection_my,d.truth_en,d.truth_my,d.application_en,d.application_my,d.decision_en,d.decision_my,d.prayer_en,d.prayer_my,d.filename,d.rawText].join(" ").toLowerCase().includes(q.toLowerCase());}
 function renderArchive(){
  const filtered=devotionals.filter(d=>matches(d,$("searchInput").value.trim()));
@@ -359,8 +367,10 @@ async function load(){
 $("englishBtn").addEventListener("click",()=>{language="en";applyLanguage();});
 $("myanmarBtn").addEventListener("click",()=>{language="my";applyLanguage();});
 $("latestBtn").addEventListener("click",()=>{if(devotionals[0]){show(devotionals[0]);$("devotional").scrollIntoView({behavior:"smooth",block:"start"});}});
-$("pdfA4Btn").addEventListener("click",()=>exportDevotionalPDF("A4"));
-$("pdfA5Btn").addEventListener("click",()=>exportDevotionalPDF("A5"));
+$("pdfA4EnBtn").addEventListener("click",()=>exportDevotionalPDF("A4","en"));
+$("pdfA5EnBtn").addEventListener("click",()=>exportDevotionalPDF("A5","en"));
+$("pdfA4MyBtn").addEventListener("click",()=>exportDevotionalPDF("A4","my"));
+$("pdfA5MyBtn").addEventListener("click",()=>exportDevotionalPDF("A5","my"));
 $("archiveToggle").addEventListener("click",()=>{$("archive").hidden=!$("archive").hidden;if(!$("archive").hidden)$("archive").scrollIntoView({behavior:"smooth",block:"start"});});
 $("searchInput").addEventListener("input",()=>{$("archive").hidden=false;renderArchive();});
 window.addEventListener("hashchange",()=>{const d=devotionals.find(x=>x.filename===hashFile());if(d)show(d,false);});
