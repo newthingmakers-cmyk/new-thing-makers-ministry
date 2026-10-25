@@ -1,6 +1,6 @@
 ---
 date: "2026-10-25"
-day: "007"
+day: "001"
 title_en: "A Word from God Worth Obeying"
 title_my: "ဝန်ခံအပ်နှံထိုက်သော ဘုရားစကား"
 verse_en: '"We have toiled all night and caught nothing; nevertheless, at Your word I will let down the net." — Luke 5:5'
