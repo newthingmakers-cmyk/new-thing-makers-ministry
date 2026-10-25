@@ -24,9 +24,11 @@ reflection_my: |
 truth_en: "Trusting and obeying God's Word is more important than relying on our own experience and knowledge."
 truth_my: "ဘုရားသခင်ရဲ့စကားကို ယုံကြည်နာခံခြင်းက အတွေ့အကြုံနဲ့ တတ်သိနားလည်မှုထက် ပိုအရေးကြီးတယ်။"
 application_en: |
-  Reflect on an area where your own experience or understanding has made it difficult to receive God's Word. Choose to trust His Word and take a practical step of obedience today.
+  Reflect on an area where your own experience or understanding has made it difficult to receive God's Word. 
+  Choose to trust His Word and take a practical step of obedience today.
 application_my: |
-  ကိုယ့်အတွေ့အကြုံနဲ့ နားလည်တတ်သိမှုကြောင့် ဘုရားသခင်ရဲ့နှုတ်ကပတ်တော်ကို လက်ခံဖို့ ခက်ခဲနေတဲ့အရာတစ်ခုကို ပြန်လည်ဆင်ခြင်ပါ။ နှုတ်ကပတ်တော်ကို ယုံကြည်ပြီး ယနေ့ လက်တွေ့နာခံလုပ်ဆောင်ပါ။
+  ကိုယ့်အတွေ့အကြုံနဲ့ နားလည်တတ်သိမှုကြောင့် ဘုရားသခင်ရဲ့နှုတ်ကပတ်တော်ကို လက်ခံဖို့ ခက်ခဲနေတဲ့အရာတစ်ခုကို ပြန်လည်ဆင်ခြင်ပါ။ 
+  နှုတ်ကပတ်တော်ကို ယုံကြည်ပြီး ယနေ့ လက်တွေ့နာခံလုပ်ဆောင်ပါ။
 decision_en: "I will trust and obey God's Word, putting it into practice above my own experience and knowledge."
 decision_my: "အတွေ့အကြုံနဲ့ အသိဉာဏ်ထက် နှုတ်ကပတ်တော်ကိုသာ ယုံကြည်နာခံပြီး လက်တွေ့ကျင့်သုံးမည်။"
 prayer_en: |
