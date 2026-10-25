@@ -1,5 +1,4 @@
 ---
-
 date: "2026-10-26"
 day: "002"
 title_en: "Faith Gives Birth to Courage"
