@@ -255,7 +255,7 @@ function show(d,updateHash=true){
  if(!d)return;
  const title=localized(d,"title")||(language==="my"?"နေ့စဉ်ဝိညာဉ်ရေးရာ ဝေငှချက်":"Daily Devotional");
  let verse=localized(d,"verse");
- const scripture=localized(d,"scripture");
+ const scripture = localized(d, "scripture") || localized(d, "verse");
  if(language==="my"&&!d.verse_my&&/^\s*(Luke 5:5|လုကာ ၅:၅)\s*$/i.test(String(d.scripture_en||d.scripture_my||""))){
   verse="ရှိမုန်ကလည်း၊ “သခင်၊ အကျွန်ုပ်တို့သည် တစ်ညလုံး ပင်ပန်းစွာ လုပ်ဆောင်သော်လည်း ဘာမျှမရပါ။ သို့သော် ကိုယ်တော်မိန့်တော်မူသောကြောင့် ပိုက်ကွန်ကို ချပါမည်” ဟု ပြန်လျှောက်လေ၏။";
  }
