@@ -80,7 +80,7 @@ details.year>summary{cursor:pointer;padding:12px 16px;background:#f1f4f0;color:v
 .site-footer strong{display:block;color:#fff;letter-spacing:.06em;font-family:Arial,sans-serif}
 .site-footer p{margin:4px 0}
 .footer-copy{font-size:.86rem;color:#b9c9c1;margin-top:12px!important}
-[hidden]{display:none!important}
+.page-panel[hidden]{display:none!important}.page-panel{animation:pageIn .18s ease-out}@keyframes pageIn{from{opacity:.65;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}.home-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:24px}.home-link{display:block;text-decoration:none;background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;text-align:left;box-shadow:0 8px 26px #20372d08}.home-link h3{margin:0 0 8px}.home-link p{margin:0;color:#4e5c55}.donate-tabs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:24px 0 18px}.donate-tab{border:1px solid #cbd5cf;border-radius:999px;padding:10px 17px;background:#fff;color:var(--green);font-weight:700}.donate-tab[aria-selected=true]{background:var(--green);color:#fff;border-color:var(--green)}.support-methods{display:grid;grid-template-columns:1fr;gap:16px;max-width:600px;margin:0 auto}.support-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;text-align:center}@media(max-width:760px){.home-grid{grid-template-columns:1fr}}[hidden]{display:none!important}
 @media(max-width:760px){.card-grid{grid-template-columns:1fr}.teaching-grid{grid-template-columns:1fr}.teaching-image{height:230px}.topbar{position:static}.nav-links a{padding:7px 9px}.wrap{padding:36px 15px}}
 @media(max-width:520px){.site-hero{min-height:320px;padding:48px 16px}.devotional-tools{grid-template-columns:1fr}.nav-links{width:100%}.nav-links a{font-size:.85rem}.topbar{gap:7px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
@@ -94,23 +94,40 @@ details.year>summary{cursor:pointer;padding:12px 16px;background:#f1f4f0;color:v
   <p class="brand-my" data-en="New Thing Makers Ministry" data-my="အသစ်သောအရာများကို ဖန်တီးတော်မူသော ဘုရားသခင်၏ အမှုတော်"></p>
   <p class="hero-line" data-en="God at Work Through Us" data-my="အမှုတော်သစ် ဖော်ဆောင်သူများ"></p>
   <p class="hero-subline" data-en="Making Disciples, Expanding His Kingdom" data-my="တပည့်တော်များကို ပြုစုပျိုးထောင်ခြင်း၊ ကိုယ်တော်၏နိုင်ငံတော်ကို ချဲ့ထွင်ခြင်း"></p>
-  <div class="hero-actions"><a class="btn btn-gold" href="#about" data-en="Explore Our Ministry" data-my="ကျွန်ုပ်တို့၏အမှုတော်ကို လေ့လာရန်"></a><a class="btn btn-light" href="#devotional" data-en="Read Devotionals" data-my="နေ့စဉ်ဝေငှချက်များ ဖတ်ရန်"></a></div>
+  <div class="hero-actions"><a class="btn btn-gold" href="#about" data-page="about" data-en="Explore Our Ministry" data-my="ကျွန်ုပ်တို့၏အမှုတော်ကို လေ့လာရန်"></a><a class="btn btn-light" href="#devotional" data-page="devotional" data-en="Read Devotionals" data-my="နေ့စဉ်ဝေငှချက်များ ဖတ်ရန်"></a></div>
 </header>
 
 <nav class="topbar" aria-label="Main navigation">
   <div class="nav-links">
-    <a href="#home" data-en="Home" data-my="ပင်မ"></a>
-    <a href="#about" data-en="About" data-my="အကြောင်း"></a>
-    <a href="#devotional" data-en="Devotional" data-my="ဝိညာဉ်ရေးရာ"></a>
-    <a href="#teaching" data-en="Teaching" data-my="သင်ကြားခြင်း"></a>
-    <a href="#contact" data-en="Contact" data-my="ဆက်သွယ်ရန်"></a>
+    <a href="#home" data-page="home" data-en="Home" data-my="ပင်မ"></a>
+    <a href="#about" data-page="about" data-en="About" data-my="အကြောင်း"></a>
+    <a href="#devotional" data-page="devotional" data-en="Devotional" data-my="ဝိညာဉ်ရေးရာ"></a>
+    <a href="#teaching" data-page="teaching" data-en="Teaching" data-my="သင်ကြားခြင်း"></a>
+    <a href="#support" data-page="support" data-en="Donate" data-my="ထောက်ပံ့ရန်"></a>
+    <a href="#contact" data-page="contact" data-en="Contact" data-my="ဆက်သွယ်ရန်"></a>
   </div>
   <button class="lang-button" id="englishBtn" aria-pressed="true">English</button>
   <button class="lang-button" id="myanmarBtn" aria-pressed="false">မြန်မာ</button>
 </nav>
 
 <main>
-<section class="wrap section" id="about">
+
+<section class="wrap section page-panel" id="home-page">
+  <div class="about-intro">
+    <p class="eyebrow" data-en="Welcome" data-my="ကြိုဆိုပါသည်"></p>
+    <h1 data-en="Welcome to New Thing Makers Ministry" data-my="New Thing Makers Ministry မှ ကြိုဆိုပါသည်"></h1>
+    <p class="lead" data-en="Growing in Christ, making disciples, and expanding His Kingdom." data-my="ခရစ်တော်၌ ကြီးထွားခြင်း၊ တပည့်တော်များကို ပြုစုပျိုးထောင်ခြင်းနှင့် ကိုယ်တော်၏နိုင်ငံတော်ကို ချဲ့ထွင်ခြင်း။"></p>
+  </div>
+  <div class="home-grid">
+    <a class="home-link" href="#about" data-page="about"><h3 data-en="About Our Ministry" data-my="ကျွန်ုပ်တို့၏အမှုတော်အကြောင်း"></h3><p data-en="Discover our vision, mission, and values." data-my="ကျွန်ုပ်တို့၏ ရူပါရုံ၊ သာသနာလုပ်ငန်းနှင့် တန်ဖိုးထားမှုများကို လေ့လာပါ။"></p></a>
+    <a class="home-link" href="#devotional" data-page="devotional"><h3 data-en="Daily Devotional" data-my="နေ့စဉ်ဝိညာဉ်ရေးရာ ဝေငှချက်"></h3><p data-en="Read and reflect on God's Word." data-my="ဘုရားသခင်၏နှုတ်ကပတ်တော်ကို ဖတ်ရှုပြီး ဆင်ခြင်ပါ။"></p></a>
+    <a class="home-link" href="#teaching" data-page="teaching"><h3 data-en="Bible Teaching" data-my="သမ္မာကျမ်းစာ သင်ကြားခြင်း"></h3><p data-en="Explore Bible teaching and discipleship resources." data-my="သမ္မာကျမ်းစာသင်ကြားချက်များနှင့် တပည့်တော်ပြုစုရေး အထောက်အကူများကို လေ့လာပါ။"></p></a>
+    <a class="home-link" href="#support" data-page="support"><h3 data-en="Support the Ministry" data-my="သာသနာလုပ်ငန်းကို ထောက်ပံ့ပါ"></h3><p data-en="See the available ways to support our ministry." data-my="သာသနာလုပ်ငန်းကို ပါဝင်ထောက်ပံ့နိုင်မည့် နည်းလမ်းများကို ကြည့်ပါ။"></p></a>
+    <a class="home-link" href="#contact" data-page="contact"><h3 data-en="Contact Us" data-my="ဆက်သွယ်ရန်"></h3><p data-en="Get in touch with our ministry." data-my="ကျွန်ုပ်တို့၏အမှုတော်နှင့် ဆက်သွယ်ပါ။"></p></a>
+  </div>
+</section>
+
+<section class="wrap section page-panel" id="about" hidden>
   <div class="section-heading">
     <p class="eyebrow" data-en="Who we are" data-my="ကျွန်ုပ်တို့၏အကြောင်း"></p>
     <h1 data-en="About Our Ministry" data-my="ကျွန်ုပ်တို့၏အမှုတော်အကြောင်း"></h1>
@@ -129,7 +146,7 @@ details.year>summary{cursor:pointer;padding:12px 16px;background:#f1f4f0;color:v
 <div>
 </section>
 
-<section class="wrap section" id="teaching">
+<section class="wrap section page-panel" id="teaching" hidden>
   <div class="section-heading">
     <p class="eyebrow" data-en="Learn and grow" data-my="သင်ယူပြီး ကြီးထွားကြပါစို့"></p>
     <h2 data-en="Bible Teaching" data-my="သမ္မာကျမ်းစာ သင်ကြားခြင်း"></h2>
@@ -139,12 +156,12 @@ details.year>summary{cursor:pointer;padding:12px 16px;background:#f1f4f0;color:v
     <div class="teaching-copy">
       <h3 data-en="Grow as a faithful disciple" data-my="သစ္စာရှိသော တပည့်တော်အဖြစ် ကြီးထွားပါ"></h3>
       <p data-en="Learn God's Word and grow as a faithful disciple of Jesus Christ. Explore Bible teaching, discipleship resources, and practical ways to live out your faith." data-my="ဘုရားသခင်၏နှုတ်ကပတ်တော်ကို လေ့လာပြီး ယေရှုခရစ်တော်၏ သစ္စာရှိသော တပည့်တော်အဖြစ် ကြီးထွားပါ။ သမ္မာကျမ်းစာသင်ကြားချက်များ၊ တပည့်တော်ပြုစုရေး အထောက်အကူများနှင့် ယုံကြည်ခြင်းကို လက်တွေ့အသက်ရှင်ဖော်ပြနိုင်မည့် နည်းလမ်းများကို လေ့လာပါ။"></p>
-      <a class="btn btn-outline" href="#devotional" data-en="Explore Devotionals" data-my="ဝိညာဉ်ရေးရာ ဝေငှချက်များကို ကြည့်ရန်"></a>
+      <a class="btn btn-outline" href="#devotional" data-page="devotional" data-en="Explore Devotionals" data-my="ဝိညာဉ်ရေးရာ ဝေငှချက်များကို ကြည့်ရန်"></a>
     </div>
   </div>
 </section>
 
-<section class="devotional-section section" id="devotional">
+<section class="devotional-section section page-panel" id="devotional" hidden>
   <div class="wrap">
     <div class="devotional-head">
       <p class="eyebrow" data-en="Daily time with God" data-my="ဘုရားသခင်နှင့် နေ့စဉ်အချိန်ယူခြင်း"></p>
@@ -162,7 +179,7 @@ details.year>summary{cursor:pointer;padding:12px 16px;background:#f1f4f0;color:v
   </div>
 </section>
 
-<section class="wrap section" id="contact">
+<section class="wrap section page-panel" id="contact" hidden>
   <div class="contact-panel">
     <p class="eyebrow" style="color:var(--gold)" data-en="Let's connect" data-my="ဆက်သွယ်ကြပါစို့"></p>
     <h2 data-en="Connect With Our Ministry" data-my="ကျွန်ုပ်တို့၏အမှုတော်နှင့် ဆက်သွယ်ပါ"></h2>
@@ -173,42 +190,37 @@ details.year>summary{cursor:pointer;padding:12px 16px;background:#f1f4f0;color:v
 </section>
 
 <!-- Support the Ministry -->
-<section id="support" class="section">
-  <h2 data-en="Support the Ministry"
-      data-my="သာသနာလုပ်ငန်းကို ပါဝင်ထောက်ပံ့ပါ">
-    Support the Ministry
-  </h2>
-
-  <p data-en="Your voluntary support helps us continue Bible teaching, discipleship, leadership training, and other ministry work."
-     data-my="သင်၏ စေတနာအလျောက် ပါဝင်ထောက်ပံ့မှုသည် သမ္မာကျမ်းစာသွန်သင်ခြင်း၊ တပည့်တော်ဖြစ်စေခြင်း၊ ခေါင်းဆောင်လေ့ကျင့်ခြင်းနှင့် အခြားသာသနာလုပ်ငန်းများကို ဆက်လက်လုပ်ဆောင်နိုင်ရန် ကူညီပေးပါသည်။">
-    Your voluntary support helps us continue our ministry work.
-  </p>
-
+<section id="support" class="section page-panel wrap" hidden>
+  <div class="section-heading">
+    <p class="eyebrow" data-en="Give with a willing heart" data-my="စေတနာအလျောက် ပါဝင်ထောက်ပံ့ခြင်း"></p>
+    <h2 data-en="Support the Ministry" data-my="သာသနာလုပ်ငန်းကို ပါဝင်ထောက်ပံ့ပါ"></h2>
+    <p class="lead" data-en="Your voluntary support helps us continue Bible teaching, discipleship, leadership training, and other ministry work."
+       data-my="သင်၏ စေတနာအလျောက် ပါဝင်ထောက်ပံ့မှုသည် သမ္မာကျမ်းစာသွန်သင်ခြင်း၊ တပည့်တော်ဖြစ်စေခြင်း၊ ခေါင်းဆောင်လေ့ကျင့်ခြင်းနှင့် အခြားသာသနာလုပ်ငန်းများကို ဆက်လက်လုပ်ဆောင်နိုင်ရန် ကူညီပေးပါသည်။"></p>
+  </div>
+  <div class="donate-tabs" role="tablist" aria-label="Donation methods">
+    <button class="donate-tab" type="button" role="tab" id="tab-duitnow" aria-controls="panel-duitnow" aria-selected="true" data-en="DuitNow QR" data-my="DuitNow QR">DuitNow QR</button>
+    <button class="donate-tab" type="button" role="tab" id="tab-tng" aria-controls="panel-tng" aria-selected="false" data-en="TNG eWallet" data-my="TNG eWallet">TNG eWallet</button>
+    <button class="donate-tab" type="button" role="tab" id="tab-paypal" aria-controls="panel-paypal" aria-selected="false" data-en="PayPal" data-my="PayPal">PayPal</button>
+    <button class="donate-tab" type="button" role="tab" id="tab-bank" aria-controls="panel-bank" aria-selected="false" data-en="Bank Transfer" data-my="ဘဏ်ငွေလွှဲခြင်း">Bank Transfer</button>
+  </div>
   <div class="support-methods">
-    <div class="support-card">
+    <div class="support-card" id="panel-duitnow" role="tabpanel" aria-labelledby="tab-duitnow">
       <h3>DuitNow QR</h3>
-      <img src="assets/duitnow-qr.jpg"
-           alt="DuitNow QR code"
-           style="width:220px;max-width:100%;height:auto">
-      <p>Malaysia</p>
+      <img src="assets/duitnow-qr.jpg" alt="DuitNow QR code" style="width:220px;max-width:100%;height:auto">
+      <p data-en="Scan this QR code to support the ministry in Malaysia." data-my="မလေးရှားနိုင်ငံအတွင်းမှ ဤ QR ကုဒ်ကို scan လုပ်၍ သာသနာလုပ်ငန်းကို ထောက်ပံ့နိုင်ပါသည်။">Malaysia</p>
     </div>
-
-    <div class="support-card">
+    <div class="support-card" id="panel-tng" role="tabpanel" aria-labelledby="tab-tng" hidden>
       <h3>TNG eWallet</h3>
-      <img src="assets/tng-qr.jpg"
-           alt="Touch 'n Go eWallet QR code"
-           style="width:220px;max-width:100%;height:auto">
+      <img src="assets/tng-qr.jpg" alt="Touch 'n Go eWallet QR code" style="width:220px;max-width:100%;height:auto">
     </div>
-
-    <div class="support-card">
+    <div class="support-card" id="panel-paypal" role="tabpanel" aria-labelledby="tab-paypal" hidden>
       <h3>PayPal</h3>
-      <img src="assets/paypal-qr.png"
-           alt="PayPal QR code"
-           style="width:220px;max-width:100%;height:auto">
-      <p data-en="International support"
-         data-my="နိုင်ငံတကာမှ ပါဝင်ထောက်ပံ့နိုင်ပါသည်။">
-        International support
-      </p>
+      <img src="assets/paypal-qr.png" alt="PayPal QR code" style="width:220px;max-width:100%;height:auto">
+      <p data-en="International support" data-my="နိုင်ငံတကာမှ ပါဝင်ထောက်ပံ့နိုင်ပါသည်။">International support</p>
+    </div>
+    <div class="support-card" id="panel-bank" role="tabpanel" aria-labelledby="tab-bank" hidden>
+      <h3 data-en="Bank Transfer" data-my="ဘဏ်ငွေလွှဲခြင်း"></h3>
+      <p data-en="Bank transfer details will be added after the account information is confirmed." data-my="ဘဏ်အကောင့်အချက်အလက်ကို အတည်ပြုပြီးနောက် ဤနေရာတွင် ထည့်သွင်းပါမည်။"></p>
     </div>
   </div>
 </section>
@@ -430,6 +442,28 @@ async function load(){
   show(devotionals.find(d=>d.filename===hashFile())||devotionals[0],false);renderArchive();
  }catch(e){console.error(e);$("status").hidden=false;$("status").innerHTML=`<p class="error">${esc(TEXT[language].failed)}</p>`;}
 }
+
+const pageIds = ["home","about","devotional","teaching","support","contact"];
+function showPage(page, scroll=true) {
+  const chosen = pageIds.includes(page) ? page : "home";
+  document.querySelectorAll(".page-panel").forEach(panel => {
+    panel.hidden = panel.id !== (chosen === "home" ? "home-page" : chosen);
+  });
+  if (scroll) window.scrollTo({top: 0, behavior: "smooth"});
+}
+document.querySelectorAll("[data-page]").forEach(link => {
+  link.addEventListener("click", event => {
+    event.preventDefault();
+    showPage(link.dataset.page);
+  });
+});
+document.querySelectorAll(".donate-tab").forEach(tab => {
+  tab.addEventListener("click", () => {
+    document.querySelectorAll(".donate-tab").forEach(item => item.setAttribute("aria-selected", String(item === tab)));
+    document.querySelectorAll('[role="tabpanel"]').forEach(panel => panel.hidden = panel.id !== tab.getAttribute("aria-controls"));
+  });
+});
+
 $("englishBtn").addEventListener("click",()=>{language="en";applyLanguage();});
 $("myanmarBtn").addEventListener("click",()=>{language="my";applyLanguage();});
 $("latestBtn").addEventListener("click",()=>{if(devotionals[0]){show(devotionals[0]);$("devotional").scrollIntoView({behavior:"smooth",block:"start"});}});
@@ -451,7 +485,7 @@ window.addEventListener("hashchange",()=>{const d=devotionals.find(x=>x.filename
   }
  },30000);
  $("year").textContent=new Date().getFullYear();
-applyLanguage();load();
+showPage("home", false);applyLanguage();load();
 })();
 </script>
 </body>
