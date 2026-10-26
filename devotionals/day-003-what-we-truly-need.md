@@ -25,6 +25,9 @@ reflection_my: |
   တကယ်တော့ ယေရှုဆီလာဖို့ ကိုယ်က အားကောင်းနေတယ်ဆိုတာ သက်သေပြစရာ မလိုပါဘူး။ ကိုယ့်အားကိုယ်ကိုးပြီး မလုံလောက်နိုင်ကြောင်း ဝန်ခံကာ ကိုယ်တော်ကို လိုအပ်နေတယ်ဆိုတာ သိရှိဖို့ပဲ လိုအပ်ပါတယ်။ ကိုယ့်ရဲ့အားနည်းခြင်းဟာ ယေရှုထံမှ ဝေးကွာစေမယ့်အရာ မဟုတ်ဘဲ ကိုယ်တော်ကို ပိုမိုလိုအပ်ကြောင်း သတိရစေတဲ့အရာဖြစ်တယ်ဆိုတာ သင်ယူခဲ့ရတယ်။
 
   ဝိညာဉ်ရေးရာဆိုတာ လုပ်ဆောင်ချက်တွေကို ပြသခြင်းမဟုတ်ဘဲ ဘုရားသခင်နဲ့ အမှန်တကယ် ဆက်ဆံရေးရှိခြင်းဖြစ်တယ်။
+truth_en: "Spiritual maturity is not about pretending to be strong, but about honestly acknowledging our weaknesses and recognizing how much we need Jesus."
+truth_my: "ဝိညာဉ်ရေးရာ ရင့်ကျက်ခြင်းဆိုတာ အားကြီးသူတစ်ယောက်လို ဟန်ဆောင်ခြင်းမဟုတ်ဘဲ ကိုယ့်ရဲ့အားနည်းချက်တွေကို ရိုးသားစွာ ဝန်ခံပြီး ယေရှုကို မည်မျှလိုအပ်နေကြောင်း သိမှတ်ခြင်းဖြစ်တယ်။"
+
 reflection_questions_en: |
   1. Am I still pretending to be spiritually healthy before God today?
   2. What makes me feel ashamed or reluctant to honestly acknowledge my weaknesses before Him?
