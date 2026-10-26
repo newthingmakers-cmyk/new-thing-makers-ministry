@@ -28,12 +28,14 @@ reflection_my: |
 truth_en: "Spiritual maturity is not about pretending to be strong, but about honestly acknowledging our weaknesses and recognizing how much we need Jesus."
 truth_my: "ဝိညာဉ်ရေးရာ ရင့်ကျက်ခြင်းဆိုတာ အားကြီးသူတစ်ယောက်လို ဟန်ဆောင်ခြင်းမဟုတ်ဘဲ ကိုယ့်ရဲ့အားနည်းချက်တွေကို ရိုးသားစွာ ဝန်ခံပြီး ယေရှုကို မည်မျှလိုအပ်နေကြောင်း သိမှတ်ခြင်းဖြစ်တယ်။"
 
-reflection_questions_en: |
-  1. Am I still pretending to be spiritually healthy before God today?
-  2. What makes me feel ashamed or reluctant to honestly acknowledge my weaknesses before Him?
-reflection_questions_my: |
-  1. ဒီနေ့ ဘုရားသခင်ရှေ့မှာ ဝိညာဉ်ရေးရာအားဖြင့် ကျန်းမာတဲ့သူတစ်ယောက်လို ဟန်ဆောင်နေမိသေးလား။
-  2. ကိုယ့်ရဲ့အားနည်းချက်တွေကို ဘုရားသခင်ရှေ့မှာ ရိုးသားစွာ ဝန်ခံဖို့ ရှက်ရွံ့နေစေတဲ့အရာက ဘာလဲ။
+application_en: |
+  Am I still pretending to be spiritually healthy before God today?
+  
+  What makes me feel ashamed or reluctant to honestly acknowledge my weaknesses before Him?
+application_my: |
+  ဒီနေ့ ဘုရားသခင်ရှေ့မှာ ဝိညာဉ်ရေးရာအားဖြင့် ကျန်းမာတဲ့သူတစ်ယောက်လို ဟန်ဆောင်နေမိသေးလား။
+  
+  ကိုယ့်ရဲ့အားနည်းချက်တွေကို ဘုရားသခင်ရှေ့မှာ ရိုးသားစွာ ဝန်ခံဖို့ ရှက်ရွံ့နေစေတဲ့အရာက ဘာလဲ။
 decision_en: "I will stop pretending to be spiritually healthy and honestly acknowledge my need before Jesus."
 decision_my: "ဝိညာဉ်ရေးရာမှာ ကျန်းမာတဲ့သူလို ဟန်မဆောင်ဘဲ ကိုယ့်ရဲ့အားနည်းချက်နဲ့ ယေရှုကို လိုအပ်နေမှုကို ကိုယ်တော်ရှေ့မှာ ရိုးသားစွာ ဝန်ခံမည်။"
 prayer_en: |
