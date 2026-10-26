@@ -103,6 +103,7 @@ details.year>summary{cursor:pointer;padding:12px 16px;background:#f1f4f0;color:v
     <a href="#about" data-page="about" data-en="About" data-my="အကြောင်း"></a>
     <a href="#devotional" data-page="devotional" data-en="Devotional" data-my="ဝိညာဉ်ရေးရာ"></a>
     <a href="#teaching" data-page="teaching" data-en="Teaching" data-my="သင်ကြားခြင်း"></a>
+    <a href="#bible-topics" data-page="bible-topics" data-en="Bible Topics" data-my="ကျမ်းစာအကြောင်းအရာများ"></a>
     <a href="#support" data-page="support" data-en="Donate" data-my="ထောက်ပံ့ရန်"></a>
     <a href="#contact" data-page="contact" data-en="Contact" data-my="ဆက်သွယ်ရန်"></a>
   </div>
@@ -122,6 +123,7 @@ details.year>summary{cursor:pointer;padding:12px 16px;background:#f1f4f0;color:v
     <a class="home-link" href="#about" data-page="about"><h3 data-en="About Our Ministry" data-my="ကျွန်ုပ်တို့၏အမှုတော်အကြောင်း"></h3><p data-en="Discover our vision, mission, and values." data-my="ကျွန်ုပ်တို့၏ ရူပါရုံ၊ သာသနာလုပ်ငန်းနှင့် တန်ဖိုးထားမှုများကို လေ့လာပါ။"></p></a>
     <a class="home-link" href="#devotional" data-page="devotional"><h3 data-en="Daily Devotional" data-my="နေ့စဉ်ဝိညာဉ်ရေးရာ ဝေငှချက်"></h3><p data-en="Read and reflect on God's Word." data-my="ဘုရားသခင်၏နှုတ်ကပတ်တော်ကို ဖတ်ရှုပြီး ဆင်ခြင်ပါ။"></p></a>
     <a class="home-link" href="#teaching" data-page="teaching"><h3 data-en="Bible Teaching" data-my="သမ္မာကျမ်းစာ သင်ကြားခြင်း"></h3><p data-en="Explore Bible teaching and discipleship resources." data-my="သမ္မာကျမ်းစာသင်ကြားချက်များနှင့် တပည့်တော်ပြုစုရေး အထောက်အကူများကို လေ့လာပါ။"></p></a>
+    <a class="home-link" href="#bible-topics" data-page="bible-topics"><h3 data-en="Bible Topics" data-my="ကျမ်းစာအကြောင်းအရာများ"></h3><p data-en="Find Scripture-based guidance for everyday life." data-my="နေ့စဉ်ဘဝအတွက် သမ္မာကျမ်းစာအခြေပြု လမ်းညွှန်ချက်များကို ရှာဖွေပါ။"></p></a>
     <a class="home-link" href="#support" data-page="support"><h3 data-en="Support the Ministry" data-my="သာသနာလုပ်ငန်းကို ထောက်ပံ့ပါ"></h3><p data-en="See the available ways to support our ministry." data-my="သာသနာလုပ်ငန်းကို ပါဝင်ထောက်ပံ့နိုင်မည့် နည်းလမ်းများကို ကြည့်ပါ။"></p></a>
     <a class="home-link" href="#contact" data-page="contact"><h3 data-en="Contact Us" data-my="ဆက်သွယ်ရန်"></h3><p data-en="Get in touch with our ministry." data-my="ကျွန်ုပ်တို့၏အမှုတော်နှင့် ဆက်သွယ်ပါ။"></p></a>
   </div>
@@ -159,6 +161,28 @@ details.year>summary{cursor:pointer;padding:12px 16px;background:#f1f4f0;color:v
       <a class="btn btn-outline" href="#devotional" data-page="devotional" data-en="Explore Devotionals" data-my="ဝိညာဉ်ရေးရာ ဝေငှချက်များကို ကြည့်ရန်"></a>
     </div>
   </div>
+</section>
+
+<section class="wrap section page-panel" id="bible-topics" hidden>
+  <div class="section-heading">
+    <p class="eyebrow" data-en="Biblical truth for everyday life" data-my="နေ့စဉ်ဘဝအတွက် သမ္မာကျမ်းစာအမှန်တရား"></p>
+    <h1 data-en="Bible Topics Library" data-my="ကျမ်းစာအကြောင်းအရာများ စာကြည့်တိုက်"></h1>
+    <p class="lead" data-en="Explore Bible-based encouragement and teaching for the situations we face in everyday life." data-my="နေ့စဉ်ဘဝတွင် ကြုံတွေ့ရသော အခြေအနေများအတွက် သမ္မာကျမ်းစာအခြေပြု အားပေးမှုနှင့် သွန်သင်ချက်များကို လေ့လာပါ။"></p>
+  </div>
+  <div class="topic-search" style="max-width:680px;margin:22px auto 28px">
+    <label for="topicSearch" data-en="Search topics / Search in English or Myanmar" data-my="အကြောင်းအရာများကို ရှာဖွေရန် / အင်္ဂလိပ်၊ မြန်မာဖြင့် ရှာနိုင်သည်"></label>
+    <input id="topicSearch" type="search" placeholder="Fear / ကြောက်ရွံ့ခြင်း" data-placeholder-en="Fear, anxiety, faith..." data-placeholder-my="ကြောက်ရွံ့ခြင်း၊ စိုးရိမ်ခြင်း၊ ယုံကြည်ခြင်း..." style="display:block;width:100%;margin-top:8px;padding:13px 15px;border:1px solid var(--line);border-radius:12px;font:inherit">
+  </div>
+  <div class="card-grid" id="topicCards">
+    <article class="info-card topic-card" data-search="fear ကြောက်ရွံ့ခြင်း afraid ကြောက်ခြင်း"><div class="symbol" aria-hidden="true">🕊️</div><h3 data-en="Fear — Overcoming Fear" data-my="ကြောက်ရွံ့ခြင်း — ကြောက်ရွံ့မှုကို ရင်ဆိုင်ခြင်း"></h3><p data-en="Key Scripture: Isaiah 41:10" data-my="အဓိကကျမ်းပိုဒ် — ဟေရှာယ ၄၁:၁၀"></p><p data-en="Remember God's presence and help when fear arises." data-my="ကြောက်ရွံ့မှု ဖြစ်ပေါ်လာချိန်တွင် ဘုရားသခင်၏ ရှိနေခြင်းနှင့် ကူညီခြင်းကို အောက်မေ့ပါ။"></p></article>
+    <article class="info-card topic-card" data-search="anxiety worry စိုးရိမ်ခြင်း စိုးရိမ်ပူပန်ခြင်း"><div class="symbol" aria-hidden="true">🙏</div><h3 data-en="Anxiety — Bringing Worries to God" data-my="စိုးရိမ်ခြင်း — စိုးရိမ်မှုများကို ဘုရားထံ အပ်နှံခြင်း"></h3><p data-en="Key Scripture: Philippians 4:6–7" data-my="အဓိကကျမ်းပိုဒ် — ဖိလိပ္ပိ ၄:၆–၇"></p><p data-en="Learn to pray honestly and seek God's peace." data-my="ရိုးသားစွာ ဆုတောင်းပြီး ဘုရားသခင်၏ ငြိမ်သက်ခြင်းကို ရှာဖွေပါ။"></p></article>
+    <article class="info-card topic-card" data-search="stress weariness စိတ်ဖိစီးခြင်း ပင်ပန်းနွမ်းနယ်ခြင်း"><div class="symbol" aria-hidden="true">🌿</div><h3 data-en="Stress & Weariness" data-my="စိတ်ဖိစီးခြင်းနှင့် ပင်ပန်းနွမ်းနယ်ခြင်း"></h3><p data-en="Key Scripture: Matthew 11:28–30" data-my="အဓိကကျမ်းပိုဒ် — မဿဲ ၁၁:၂၈–၃၀"></p><p data-en="Come to Christ and learn from His invitation to rest." data-my="ခရစ်တော်ထံ လာ၍ အနားယူရန် ဖိတ်ခေါ်တော်မူခြင်းကို လေ့လာပါ။"></p></article>
+    <article class="info-card topic-card" data-search="discouragement weak အားငယ်ခြင်း စိတ်ဓာတ်ကျခြင်း"><div class="symbol" aria-hidden="true">☀️</div><h3 data-en="Discouragement — Renewing Hope" data-my="အားငယ်ခြင်း — မျှော်လင့်ချက် ပြန်လည်ရရှိခြင်း"></h3><p data-en="Key Scripture: Psalm 42:11" data-my="အဓိကကျမ်းပိုဒ် — ဆာလံ ၄၂:၁၁"></p><p data-en="Speak truth to your soul and place your hope in God." data-my="မိမိစိတ်ဝိညာဉ်ကို အမှန်တရားဖြင့် သတိပေးပြီး ဘုရားသခင်၌ မျှော်လင့်ပါ။"></p></article>
+    <article class="info-card topic-card" data-search="faith trust ယုံကြည်ခြင်း ယုံကြည်ကိုးစားခြင်း"><div class="symbol" aria-hidden="true">📖</div><h3 data-en="Faith & Trusting God" data-my="ယုံကြည်ခြင်းနှင့် ဘုရားသခင်ကို ကိုးစားခြင်း"></h3><p data-en="Key Scripture: Proverbs 3:5–6" data-my="အဓိကကျမ်းပိုဒ် — သုတ္တံ ၃:၅–၆"></p><p data-en="Learn to trust the Lord and seek His direction." data-my="ထာဝရဘုရားကို ကိုးစားပြီး ကိုယ်တော်၏ လမ်းညွှန်မှုကို ရှာဖွေပါ။"></p></article>
+    <article class="info-card topic-card" data-search="hope hopelessness မျှော်လင့်ခြင်း မျှော်လင့်ချက်ပျောက်ဆုံးခြင်း"><div class="symbol" aria-hidden="true">🌅</div><h3 data-en="Hope in God" data-my="ဘုရားသခင်၌ မျှော်လင့်ခြင်း"></h3><p data-en="Key Scripture: Romans 15:13" data-my="အဓိကကျမ်းပိုဒ် — ရောမ ၁၅:၁၃"></p><p data-en="Reflect on the hope God gives through faith." data-my="ယုံကြည်ခြင်းအားဖြင့် ဘုရားသခင်ပေးတော်မူသော မျှော်လင့်ခြင်းကို ဆင်ခြင်ပါ။"></p></article>
+  </div>
+  <p id="topicNoResults" hidden data-en="No matching topics found. Try another word." data-my="ကိုက်ညီသော အကြောင်းအရာ မတွေ့ပါ။ အခြားစကားလုံးဖြင့် ရှာကြည့်ပါ။" style="text-align:center;margin-top:22px"></p>
+  <p class="small-note" style="margin-top:28px" data-en="These are introductory topic cards. Full lessons, reflection questions, prayers, PDFs, and videos can be added gradually. Bible-based encouragement is not a replacement for professional mental-health support when needed." data-my="ဤကတ်များသည် အစပြုမိတ်ဆက်ချက်များ ဖြစ်ပါသည်။ သင်ခန်းစာအပြည့်အစုံ၊ ဆင်ခြင်ရန်မေးခွန်းများ၊ ဆုတောင်းချက်များ၊ PDF နှင့် ဗီဒီယိုများကို တဖြည်းဖြည်း ထပ်ထည့်နိုင်ပါသည်။ လိုအပ်သည့်အခါ ကျွမ်းကျင်သူ၏ စိတ်ကျန်းမာရေးအကူအညီကို ရယူခြင်းအတွက် သမ္မာကျမ်းစာအခြေပြု အားပေးမှုကို အစားထိုးအဖြစ် မယူသင့်ပါ။"></p>
 </section>
 
 <section class="devotional-section section page-panel" id="devotional" hidden>
@@ -443,7 +467,7 @@ async function load(){
  }catch(e){console.error(e);$("status").hidden=false;$("status").innerHTML=`<p class="error">${esc(TEXT[language].failed)}</p>`;}
 }
 
-const pageIds = ["home","about","devotional","teaching","support","contact"];
+const pageIds = ["home","about","devotional","teaching","bible-topics","support","contact"];
 function showPage(page, scroll=true) {
   const chosen = pageIds.includes(page) ? page : "home";
   document.querySelectorAll(".page-panel").forEach(panel => {
@@ -466,6 +490,24 @@ document.querySelectorAll(".donate-tab").forEach(tab => {
 
 $("englishBtn").addEventListener("click",()=>{language="en";applyLanguage();});
 $("myanmarBtn").addEventListener("click",()=>{language="my";applyLanguage();});
+const topicSearch = $("topicSearch");
+if(topicSearch){
+  const filterTopics = () => {
+    const query = topicSearch.value.trim().toLocaleLowerCase();
+    let visible = 0;
+    document.querySelectorAll(".topic-card").forEach(card => {
+      const match = !query || (card.dataset.search + " " + card.innerText).toLocaleLowerCase().includes(query);
+      card.hidden = !match;
+      if(match) visible++;
+    });
+    $("topicNoResults").hidden = visible > 0;
+  };
+  topicSearch.addEventListener("input", filterTopics);
+  const updateTopicPlaceholder = () => { topicSearch.placeholder = language === "my" ? topicSearch.dataset.placeholderMy : topicSearch.dataset.placeholderEn; };
+  $("englishBtn").addEventListener("click", updateTopicPlaceholder);
+  $("myanmarBtn").addEventListener("click", updateTopicPlaceholder);
+  updateTopicPlaceholder();
+}
 $("latestBtn").addEventListener("click",()=>{if(devotionals[0]){show(devotionals[0]);$("devotional").scrollIntoView({behavior:"smooth",block:"start"});}});
 $("pdfA4EnBtn").addEventListener("click",()=>exportDevotionalPDF("A4","en"));
 $("pdfA5EnBtn").addEventListener("click",()=>exportDevotionalPDF("A5","en"));
