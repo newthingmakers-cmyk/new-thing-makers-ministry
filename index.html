@@ -574,10 +574,18 @@ async function load(){
 const pageIds = ["home","about","devotional","teaching","bible-topics","support","contact"];
 function showPage(page, scroll=true) {
   const chosen = pageIds.includes(page) ? page : "home";
+  const targetId = chosen === "home" ? "home-page" : chosen;
   document.querySelectorAll(".page-panel").forEach(panel => {
-    panel.hidden = panel.id !== (chosen === "home" ? "home-page" : chosen);
+    panel.hidden = panel.id !== targetId;
   });
-  if (scroll) window.scrollTo({top: 0, behavior: "smooth"});
+  if (scroll) {
+    if (chosen === "home") {
+      window.scrollTo({top: 0, behavior: "smooth"});
+    } else {
+      const target = document.getElementById(targetId);
+      if (target) target.scrollIntoView({behavior: "smooth", block: "start"});
+    }
+  }
 }
 document.querySelectorAll("[data-page]").forEach(link => {
   link.addEventListener("click", event => {
