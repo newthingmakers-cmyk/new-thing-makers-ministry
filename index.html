@@ -14,7 +14,7 @@ body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,"Noto
 button,input{font:inherit}
 a{color:inherit}
 button{cursor:pointer}
-.site-hero{position:relative;isolation:isolate;overflow:hidden;text-align:center;color:#fff;background:linear-gradient(180deg,rgba(15,43,37,.5),rgba(15,43,37,.9)),url("sunrise.jpg") center 48%/cover no-repeat;min-height:680px;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:60px 18px 58px;border-bottom:4px solid var(--gold)}
+.site-hero{position:relative;isolation:isolate;overflow:hidden;text-align:center;color:#fff;background:linear-gradient(180deg,rgba(15,43,37,.42),rgba(15,43,37,.88)),url("sunrise.jpg") center 48%/cover no-repeat;min-height:680px;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:100px 18px 58px;border-bottom:4px solid var(--gold)}
 .site-hero:before{content:"";position:absolute;inset:0;background:linear-gradient(130deg,rgba(23,60,53,.35),rgba(16,44,39,.28));z-index:-1}
 .brand{font-family:Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;font-size:clamp(1.25rem,3.6vw,2.2rem);font-weight:700;line-height:1.35;text-wrap:balance}
 .brand-my{font-size:clamp(1.15rem,3vw,1.7rem);margin:10px 0 0}
@@ -26,12 +26,12 @@ button{cursor:pointer}
 .btn-gold{background:var(--gold);color:#20352e}
 .btn-light{background:#fff;color:var(--green)}
 .btn-outline{border-color:#cbd5cf;color:var(--green);background:#fff}
-.topbar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap;padding:9px 12px}
+.topbar{position:absolute;top:0;left:0;right:0;z-index:20;background:rgba(10,28,25,.28);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.18);display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap;padding:12px 14px}
 .nav-links{display:flex;gap:4px;align-items:center;justify-content:center;flex-wrap:wrap}
-.nav-links a{display:inline-block;text-decoration:none;color:var(--green);padding:7px 12px;border-radius:999px;font-family:Arial,sans-serif;font-size:.92rem;font-weight:700}
-.nav-links a:hover,.nav-links a:focus{background:var(--soft)}
-.lang-button,.plain-button{border:1px solid #cbd5cf;border-radius:999px;padding:7px 13px;background:#fff;color:var(--green);cursor:pointer}
-.lang-button[aria-pressed=true]{background:var(--green);color:#fff;border-color:var(--green)}
+.nav-links a{display:inline-block;text-decoration:none;color:#fff;padding:7px 12px;border-radius:999px;font-family:Arial,sans-serif;font-size:.92rem;font-weight:700;transition:background .15s,color .15s}
+.nav-links a:hover,.nav-links a:focus{background:rgba(255,255,255,.18);color:#fff}
+.lang-button{border:1px solid rgba(255,255,255,.55);border-radius:999px;padding:7px 13px;background:rgba(255,255,255,.1);color:#fff;cursor:pointer}.plain-button{border:1px solid #cbd5cf;border-radius:999px;padding:7px 13px;background:#fff;color:var(--green);cursor:pointer}
+.lang-button[aria-pressed=true]{background:var(--gold);color:#20352e;border-color:var(--gold)}
 .wrap{max-width:1080px;margin:0 auto;padding:48px 18px}
 .section{scroll-margin-top:82px}
 .section-heading{text-align:center;margin:0 auto 24px;max-width:780px}
@@ -94,22 +94,13 @@ details.year>summary{cursor:pointer;padding:12px 16px;background:#f1f4f0;color:v
 .site-footer p{margin:4px 0}
 .footer-copy{font-size:.86rem;color:#b9c9c1;margin-top:12px!important}
 .page-panel[hidden]{display:none!important}.page-panel{animation:pageIn .18s ease-out}@keyframes pageIn{from{opacity:.65;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}.home-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:24px}.home-link{display:block;text-decoration:none;background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;text-align:left;box-shadow:0 8px 26px #20372d08}.home-link h3{margin:0 0 8px}.home-link p{margin:0;color:#4e5c55}.donate-tabs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:24px 0 18px}.donate-tab{border:1px solid #cbd5cf;border-radius:999px;padding:10px 17px;background:#fff;color:var(--green);font-weight:700}.donate-tab[aria-selected=true]{background:var(--green);color:#fff;border-color:var(--green)}.support-methods{display:grid;grid-template-columns:1fr;gap:16px;max-width:600px;margin:0 auto}.support-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;text-align:center}@media(max-width:760px){.home-grid{grid-template-columns:1fr}}[hidden]{display:none!important}
-@media(max-width:760px){.card-grid{grid-template-columns:1fr}.teaching-grid{grid-template-columns:1fr}.teaching-image{height:230px}.topbar{position:static}.nav-links a{padding:7px 9px}.wrap{padding:36px 15px}}
-@media(max-width:520px){.site-hero{min-height:320px;padding:48px 16px}.devotional-tools{grid-template-columns:1fr}.nav-links{width:100%}.nav-links a{font-size:.85rem}.topbar{gap:7px}}
+@media(max-width:760px){.card-grid{grid-template-columns:1fr}.teaching-grid{grid-template-columns:1fr}.teaching-image{height:230px}.nav-links a{padding:7px 9px}.wrap{padding:36px 15px}}
+@media(max-width:520px){.site-hero{min-height:620px;padding:150px 16px 48px}.topbar{padding:10px 8px;gap:6px}.devotional-tools{grid-template-columns:1fr}.nav-links{width:100%;gap:2px}.nav-links a{font-size:.78rem;padding:6px 8px}.lang-button{padding:6px 10px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
 </style>
 </head>
 <body>
 <header class="site-hero" id="home">
-  <div class="brand">
-  New Thing Makers Ministry
-</div>
-  <p class="brand-my" data-en="The Ministry of the God Who Makes All Things New" data-my="အသစ်သောအရာများကို ဖန်တီးတော်မူသော ဘုရားသခင်၏ အမှုတော်"></p>
-  <p class="hero-line" data-en="God at Work Through Us" data-my="အမှုတော်သစ် ဖော်ဆောင်သူများ"></p>
-  <p class="hero-subline" data-en="Making Disciples, Expanding His Kingdom" data-my="တပည့်တော်များကို ပြုစုပျိုးထောင်ခြင်း၊ ကိုယ်တော်၏နိုင်ငံတော်ကို ချဲ့ထွင်ခြင်း"></p>
-  <div class="hero-actions"><a class="btn btn-gold" href="#about" data-page="about" data-en="Explore Our Ministry" data-my="ကျွန်ုပ်တို့၏အမှုတော်ကို လေ့လာရန်"></a><a class="btn btn-light" href="#devotional" data-page="devotional" data-en="Read Devotionals" data-my="နေ့စဉ်ဝေငှချက်များ ဖတ်ရန်"></a></div>
-</header>
-
 <nav class="topbar" aria-label="Main navigation">
   <div class="nav-links">
     <a href="#home" data-page="home" data-en="Home" data-my="ပင်မ"></a>
@@ -123,6 +114,17 @@ details.year>summary{cursor:pointer;padding:12px 16px;background:#f1f4f0;color:v
   <button class="lang-button" id="englishBtn" aria-pressed="true">English</button>
   <button class="lang-button" id="myanmarBtn" aria-pressed="false">မြန်မာ</button>
 </nav>
+
+  <div class="brand">
+  New Thing Makers Ministry
+</div>
+  <p class="brand-my" data-en="The Ministry of the God Who Makes All Things New" data-my="အသစ်သောအရာများကို ဖန်တီးတော်မူသော ဘုရားသခင်၏ အမှုတော်"></p>
+  <p class="hero-line" data-en="God at Work Through Us" data-my="အမှုတော်သစ် ဖော်ဆောင်သူများ"></p>
+  <p class="hero-subline" data-en="Making Disciples, Expanding His Kingdom" data-my="တပည့်တော်များကို ပြုစုပျိုးထောင်ခြင်း၊ ကိုယ်တော်၏နိုင်ငံတော်ကို ချဲ့ထွင်ခြင်း"></p>
+  <div class="hero-actions"><a class="btn btn-gold" href="#about" data-page="about" data-en="Explore Our Ministry" data-my="ကျွန်ုပ်တို့၏အမှုတော်ကို လေ့လာရန်"></a><a class="btn btn-light" href="#devotional" data-page="devotional" data-en="Read Devotionals" data-my="နေ့စဉ်ဝေငှချက်များ ဖတ်ရန်"></a></div>
+</header>
+
+
 
 <main>
 
