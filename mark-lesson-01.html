@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mark Lesson 1 | New Thing Makers Ministry</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: #f7f8f6;
+      color: #1f2937;
+      font-family: Georgia, "Noto Serif Myanmar", "Myanmar Text", serif;
+      line-height: 1.8;
+    }
+
+    header {
+      background: #12345a;
+      color: white;
+      text-align: center;
+      padding: 32px 18px;
+    }
+
+    header h1 { margin: 0 0 10px; }
+
+    nav {
+      text-align: center;
+      background: white;
+      padding: 15px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    nav a {
+      color: #12345a;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 10px;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 16px;
+    }
+
+    section {
+      background: white;
+      padding: clamp(18px, 4vw, 30px);
+      margin-bottom: 22px;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      box-shadow: 0 4px 18px rgba(18, 52, 90, 0.06);
+    }
+
+    h2 { color: #12345a; }
+
+    .eyebrow {
+      color: #1d7a58;
+      font-weight: bold;
+    }
+
+    .scripture {
+      background: #eef5ef;
+      border-left: 4px solid #1d7a58;
+      padding: 15px;
+      border-radius: 6px;
+    }
+
+    .video-placeholder {
+      background: #f1f5f9;
+      border: 1px dashed #94a3b8;
+      border-radius: 10px;
+      padding: 24px;
+      text-align: center;
+    }
+
+    .back-button {
+      display: inline-block;
+      background: #12345a;
+      color: white;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 24px;
+    }
+
+    button {
+      padding: 8px 18px;
+      margin: 4px;
+      border: 1px solid #12345a;
+      border-radius: 20px;
+      background: white;
+      color: #12345a;
+      cursor: pointer;
+      font: inherit;
+    }
+
+    button.active {
+      background: #12345a;
+      color: white;
+    }
+
+    footer {
+      background: #12345a;
+      color: white;
+      text-align: center;
+      padding: 24px 16px;
+    }
+
+    @media (max-width: 600px) {
+      nav a { display: inline-block; margin: 5px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1 data-en="Gospel of Mark — Lesson 1"
+        data-my="ရှင်မာကုခရစ်ဝင်ကျမ်း — သင်ခန်းစာ ၁">
+      Gospel of Mark — Lesson 1
+    </h1>
+
+    <p data-en="Read the Word · Understand Christ · Live as His disciple"
+       data-my="နှုတ်ကပတ်တော်ကို ဖတ်ရှုပါ · ခရစ်တော်ကို နားလည်ပါ · ကိုယ်တော်၏ တပည့်တော်အဖြစ် အသက်ရှင်ပါ">
+      Read the Word · Understand Christ · Live as His disciple
+    </p>
+  </header>
+
+  <nav>
+    <a href="index.html"
+       data-en="Home"
+       data-my="ပင်မစာမျက်နှာ">Home</a>
+
+    <a href="gospel-of-mark-intro.html"
+       data-en="Mark Introduction"
+       data-my="မာကုကျမ်း မိတ်ဆက်">Mark Introduction</a>
+
+    <div>
+      <button id="englishButton" class="active"
+              onclick="setLanguage('en')" type="button">English</button>
+
+      <button id="myanmarButton"
+              onclick="setLanguage('my')" type="button">မြန်မာ</button>
+    </div>
+  </nav>
+
+  <main>
+    <p>
+      <a class="back-button" href="gospel-of-mark-intro.html"
+         data-en="← Back to Introduction"
+         data-my="← မိတ်ဆက်သို့ ပြန်သွားရန်">
+        ← Back to Introduction
+      </a>
+    </p>
+
+    <section>
+      <p class="eyebrow"
+         data-en="Lesson 1"
+         data-my="သင်ခန်းစာ ၁">Lesson 1</p>
+
+      <h2 data-en="Introduction to the Gospel of Mark"
+          data-my="ရှင်မာကုခရစ်ဝင်ကျမ်း မိတ်ဆက်">
+        Introduction to the Gospel of Mark
+      </h2>
+
+      <div class="scripture">
+        <strong data-en="Key Scripture: Mark 1:1"
+                data-my="အဓိကကျမ်းချက် — မာကု ၁:၁">
+          Key Scripture: Mark 1:1
+        </strong>
+
+        <p data-en="The beginning of the gospel of Jesus Christ, the Son of God."
+           data-my="ဘုရားသခင်၏သားတော် ယေရှုခရစ်၏ ဧဝံဂေလိတရား၏ အစ။">
+          The beginning of the gospel of Jesus Christ, the Son of God.
+        </p>
+      </div>
+
+      <p data-en="This lesson introduces the Gospel of Mark and invites us to read it carefully, understand its message about Jesus Christ, and respond faithfully to His call."
+         data-my="ဤသင်ခန်းစာသည် ရှင်မာကုခရစ်ဝင်ကျမ်းကို မိတ်ဆက်ပေးပြီး ယေရှုခရစ်တော်အကြောင်း ဖော်ပြထားသော သတင်းစကားကို ဂရုတစိုက် လေ့လာနားလည်ကာ ကိုယ်တော်၏ ခေါ်တော်မူခြင်းကို သစ္စာရှိစွာ တုံ့ပြန်ရန် ဖိတ်ခေါ်ပါသည်။">
+        This lesson introduces the Gospel of Mark and its message about Jesus Christ.
+      </p>
+    </section>
+
+    <section>
+      <h2 data-en="1. Lesson Goal"
+          data-my="၁။ သင်ခန်းစာ၏ ရည်မှန်းချက်">
+        1. Lesson Goal
+      </h2>
+
+      <p data-en="To understand the purpose and main themes of the Gospel of Mark and begin a Christ-centered study of the book."
+         data-my="ရှင်မာကုခရစ်ဝင်ကျမ်း၏ ရည်ရွယ်ချက်နှင့် အဓိကအကြောင်းအရာများကို နားလည်ပြီး ခရစ်တော်ကို ဗဟိုပြုသော ကျမ်းစာလေ့လာမှုကို စတင်ရန် ဖြစ်ပါသည်။">
+        To understand the purpose and main themes of the Gospel of Mark.
+      </p>
+    </section>
+
+    <section>
+      <h2 data-en="2. Biblical Teaching"
+          data-my="၂။ ကျမ်းစာသွန်သင်ချက်">
+        2. Biblical Teaching
+      </h2>
+
+      <p data-en="As we study each passage, we will pay attention to its context, its meaning, what it reveals about Jesus Christ, and how it should shape the life of a disciple."
+         data-my="ကျမ်းပိုဒ်တစ်ခုချင်းစီကို လေ့လာရာတွင် နောက်ခံအခြေအနေ၊ အဓိပ္ပာယ်၊ ယေရှုခရစ်တော်အကြောင်း ဖော်ပြချက်နှင့် တပည့်တော်တစ်ဦး၏ အသက်တာအပေါ် မည်သို့ သက်ရောက်သင့်သည်ကို အလေးထားပါမည်။">
+        We will study the context, meaning, Christ-centered message, and practical response of each passage.
+      </p>
+
+      <p data-en="The detailed teaching for this lesson will be added as it is prepared."
+         data-my="ဤသင်ခန်းစာ၏ အသေးစိတ်သွန်သင်ချက်ကို ပြင်ဆင်ပြီးသည့်အခါ ထည့်သွင်းသွားပါမည်။">
+        The detailed teaching for this lesson will be added as it is prepared.
+      </p>
+    </section>
+
+    <section>
+      <h2 data-en="3. Teaching Video"
+          data-my="၃။ ဗီဒီယိုသင်ကြားချက်">
+        3. Teaching Video
+      </h2>
+
+      <div class="video-placeholder">
+        <p data-en="The teaching video will be available here when it is ready."
+           data-my="သင်ကြားရေးဗီဒီယို အဆင်သင့်ဖြစ်သည့်အခါ ဤနေရာတွင် ထည့်သွင်းပါမည်။">
+          The teaching video will be available here when it is ready.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2 data-en="4. Reflection and Application"
+          data-my="၄။ ပြန်လည်ဆင်ခြင်ခြင်းနှင့် လက်တွေ့အသုံးချခြင်း">
+        4. Reflection and Application
+      </h2>
+
+      <ol>
+        <li data-en="What do I learn about Jesus Christ from this passage?"
+            data-my="ဤကျမ်းပိုဒ်မှ ယေရှုခရစ်တော်အကြောင်း ဘာသင်ယူရသနည်း။">
+          What do I learn about Jesus Christ from this passage?
+        </li>
+
+        <li data-en="What truth should shape my life?"
+            data-my="ကျွန်ုပ်၏အသက်တာကို ပုံဖော်သင့်သော သမ္မာတရားက ဘာလဲ။">
+          What truth should shape my life?
+        </li>
+
+        <li data-en="What practical step should I take in response?"
+            data-my="တုံ့ပြန်မှုအဖြစ် မည်သည့်အရာကို လက်တွေ့လုပ်ဆောင်သင့်သနည်း။">
+          What practical step should I take in response?
+        </li>
+      </ol>
+    </section>
+
+    <section>
+      <h2 data-en="5. Discussion Questions"
+          data-my="၅။ ဆွေးနွေးရန်မေးခွန်းများ">
+        5. Discussion Questions
+      </h2>
+
+      <ol>
+        <li data-en="Why is it important to study the Gospel of Mark carefully?"
+            data-my="ရှင်မာကုခရစ်ဝင်ကျမ်းကို ဂရုတစိုက် လေ့လာရန် ဘာကြောင့် အရေးကြီးသနည်း။">
+          Why is it important to study the Gospel of Mark carefully?
+        </li>
+
+        <li data-en="How can studying the life of Jesus help us become faithful disciples?"
+            data-my="ယေရှု၏အသက်တာကို လေ့လာခြင်းက သစ္စာရှိသော တပည့်တော်များ ဖြစ်လာရန် မည်သို့ အထောက်အကူပြုသနည်း။">
+          How can studying the life of Jesus help us become faithful disciples?
+        </li>
+      </ol>
+    </section>
+
+    <section>
+      <h2 data-en="6. Prayer and Response"
+          data-my="၆။ ဆုတောင်းခြင်းနှင့် တုံ့ပြန်ခြင်း">
+        6. Prayer and Response
+      </h2>
+
+      <p data-en="Pray that God will help you understand His Word, know Jesus Christ more deeply, and faithfully live out what you learn."
+         data-my="ဘုရားသခင်၏နှုတ်ကပတ်တော်ကို နားလည်ရန်၊ ယေရှုခရစ်တော်ကို ပိုမိုသိကျွမ်းရန်နှင့် သင်ယူထားသောအရာများကို သစ္စာရှိစွာ အသက်တာတွင် ကျင့်သုံးရန် ဘုရားသခင်ထံ ဆုတောင်းပါ။">
+        Pray for understanding, deeper knowledge of Christ, and faithful obedience.
+      </p>
+    </section>
+
+    <p>
+      <a class="back-button" href="index.html#teaching"
+         data-en="← Return to Bible Teaching"
+         data-my="← ကျမ်းစာသင်ကြားချက်သို့ ပြန်သွားရန်">
+        ← Return to Bible Teaching
+      </a>
+    </p>
+  </main>
+
+  <footer>
+    <strong>New Thing Makers Ministry</strong>
+    <p>Growing in Christ · Making Disciples · Expanding His Kingdom</p>
+  </footer>
+
+  <script>
+    function setLanguage(language) {
+      document.documentElement.lang = language;
+
+      document.querySelectorAll("[data-en][data-my]").forEach(function(element) {
+        element.textContent =
+          language === "my"
+            ? element.getAttribute("data-my")
+            : element.getAttribute("data-en");
+      });
+
+      document.getElementById("englishButton").classList.toggle("active", language === "en");
+      document.getElementById("myanmarButton").classList.toggle("active", language === "my");
+    }
+  </script>
+</body>
+</html>
