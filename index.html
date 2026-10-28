@@ -1,3 +1,4 @@
+```
 <!doctype html>
 <html lang="en">
 <head>
@@ -461,8 +462,7 @@ function show(d,updateHash=true){
  }
  const reference=verse?`<p class="scripture-reference">${esc(verse)}</p>`:"";
  const verseBlock=scripture?`<section><h3>${esc(TEXT[language].verse)}</h3><div class="verse">${esc(contentText(scripture))}</div></section>`:"";
- $("devotionalCard").innerHTML=`<p class="date">${esc(dateLabel(d.date))}${d.day?" · "+esc(language==="my"?"နေ့ "+d.day:"Day "+d.day):""}</p><h2 class="devotional-title">${esc(title)}</h2>${verseBlock}${block(TEXT[language].reflection,localized(d,"reflection"))}${block(TEXT[language].truth,localized(d,"truth"),"truth")}${block(TEXT[language].application,applicationItems(localized(d,"application")),"application-list")}${block(TEXT[language].decision,localized(d,"decision"),"decision")}${block(TEXT[language].prayer,localized(d,"prayer"))}`;
- ${author ? `<p class="author">${esc(language==="my"?"စာရေးသူ":"Written by")}: ${esc(author)}</p>` : ""}
+ $("devotionalCard").innerHTML=`<p class="date">${esc(dateLabel(d.date))}${d.day?" · "+esc(language==="my"?"နေ့ "+d.day:"Day "+d.day):""}</p><h2 class="devotional-title">${esc(title)}</h2>${author ? `<p class="author">${esc(language==="my"?"ရေးသားသူ":"Written by")}: ${esc(author)}</p>` : ""}${verseBlock}${block(TEXT[language].reflection,localized(d,"reflection"))}${block(TEXT[language].truth,localized(d,"truth"),"truth")}${block(TEXT[language].application,applicationItems(localized(d,"application")),"application-list")}${block(TEXT[language].decision,localized(d,"decision"),"decision")}${block(TEXT[language].prayer,localized(d,"prayer"))}`;
  $("devotionalCard").hidden=false;$("status").hidden=true;if(updateHash&&d.filename)history.replaceState(null,"",`#devotional=${encodeURIComponent(d.filename)}`);
 }
 
@@ -659,3 +659,4 @@ showPage("home", false);applyLanguage();load();
 </script>
 </body>
 </html>
+```
