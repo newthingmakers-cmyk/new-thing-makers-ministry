@@ -3,6 +3,8 @@ date: 2026-10-27
 day: "003"
 title_en: "What We Truly Need"
 title_my: "အမှန်တကယ်လိုအပ်နေသောအရာ"
+author_en: "Joseph Chan"
+author_my: "စိုးမိုးနိုင်"
 verse_en: '"It is not the healthy who need a doctor, but the sick." — Luke 5:31'
 verse_my: '"ကျန်းမာသောသူတို့သည် ဆေးသမားကို အလိုမရှိကြ။ နာသောသူတို့သာလျှင် အလိုရှိကြ၏။" — ရှင်လုကာ ၅:၃၁'
 reflection_en: |
