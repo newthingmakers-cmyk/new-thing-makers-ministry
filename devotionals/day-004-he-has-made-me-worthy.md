@@ -1,6 +1,8 @@
 ---
 date: "2026-10-28"
 day: "004"
+author_en: "Joseph Chan"
+author_my: "စိုးမိုးနိုင်"
 title_en: "He Has Made Me Worthy"
 title_my: "ထိုက်တန်စေခဲ့ပြီ"
 verse_en: '"Then the LORD said to Joshua, ‘Today I have rolled away the reproach of Egypt from you.” — Joshua 5:9'
