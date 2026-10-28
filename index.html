@@ -425,7 +425,7 @@ function normalize(data,filename,url,rawText){
  const myRef=(String(old.verse.my||"").match(/(?:လုကာ|မဿဲ|မာကု|ယောဟန်|တမန်တော်ဝတ္ထု|ရောမ)\s*[၀-၉0-9]+[:：][၀-၉0-9]+(?:[-–][၀-၉0-9]+)?/)||[])[0]||"";
  if(myRef)old.verse.my=old.verse.my.replace(myRef,"").trim();
  const f=(key,oldKey,lang)=>{const value=data[key]||((oldKey&&old[oldKey])?old[oldKey][lang]:"")||"";return Array.isArray(value)?value.map(v=>String(v).trim()).filter(Boolean):String(value).trim();};
- return {filename,url,date:normalizeDate(data.date,filename),day:String(data.day||"").trim(),
+ return {filename,url,date:normalizeDate(data.date,filename),day:String(data.day||"").trim(),author_en:f("author_en",null,"en"),author_my:f("author_my",null,"my"),
  title_en:f("title_en","title","en"),title_my:f("title_my","title","my"),
  verse_en:f("verse_en","verse","en"),verse_my:f("verse_my","verse","my"),scripture_en:f("scripture_en",null,"en")||detectedRef,scripture_my:f("scripture_my",null,"my")||myRef,
  reflection_en:f("reflection_en","reflection","en"),reflection_my:f("reflection_my","reflection","my"),
