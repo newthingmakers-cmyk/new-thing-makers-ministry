@@ -36,3 +36,16 @@ collections:
 
       - { label: "Prayer — English", name: "prayer_en", widget: "text" }
       - { label: "Prayer — Myanmar", name: "prayer_my", widget: "text" }
+        - name: "bible-studies"
+    label: "Bible Studies"
+    folder: "bible-studies"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Chapter", name: "chapter", widget: "string" }
+      - { label: "Passage", name: "passage", widget: "string" }
+      - { label: "Burmese Content", name: "body_my", widget: "markdown" }
+      - { label: "English Content", name: "body_en", widget: "markdown" }
