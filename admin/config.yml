@@ -43,4 +43,3 @@ collections:
       - { label: "Passage", name: "passage", widget: "string" }
       - { label: "Burmese Content", name: "body_my", widget: "markdown" }
       - { label: "English Content", name: "body_en", widget: "markdown" }
-```
