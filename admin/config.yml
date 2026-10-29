@@ -1,3 +1,4 @@
+```yaml
 backend:
   name: github
   repo: newthingmakers-cmyk/new-thing-makers-ministry
@@ -14,29 +15,23 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Day Number (Optional)", name: "day", widget: "string", required: false }
+      - { label: "Day Number", name: "day", widget: "string", required: false }
+      - { label: "Title - English", name: "title_en", widget: "string" }
+      - { label: "Title - Myanmar", name: "title_my", widget: "string" }
+      - { label: "Bible Verse - English", name: "verse_en", widget: "text" }
+      - { label: "Bible Verse - Myanmar", name: "verse_my", widget: "text" }
+      - { label: "Reflection - English", name: "reflection_en", widget: "text" }
+      - { label: "Reflection - Myanmar", name: "reflection_my", widget: "text" }
+      - { label: "Truth - English", name: "truth_en", widget: "text", required: false }
+      - { label: "Truth - Myanmar", name: "truth_my", widget: "text", required: false }
+      - { label: "Application - English", name: "application_en", widget: "text" }
+      - { label: "Application - Myanmar", name: "application_my", widget: "text" }
+      - { label: "Decision - English", name: "decision_en", widget: "text", required: false }
+      - { label: "Decision - Myanmar", name: "decision_my", widget: "text", required: false }
+      - { label: "Prayer - English", name: "prayer_en", widget: "text" }
+      - { label: "Prayer - Myanmar", name: "prayer_my", widget: "text" }
 
-      - { label: "Title — English", name: "title_en", widget: "string" }
-      - { label: "Title — Myanmar", name: "title_my", widget: "string" }
-
-      - { label: "Bible Verse — English", name: "verse_en", widget: "text" }
-      - { label: "Bible Verse — Myanmar", name: "verse_my", widget: "text" }
-
-      - { label: "Reflection — English", name: "reflection_en", widget: "text" }
-      - { label: "Reflection — Myanmar", name: "reflection_my", widget: "text" }
-
-      - { label: "Truth — English (Optional)", name: "truth_en", widget: "text", required: false }
-      - { label: "Truth — Myanmar (Optional)", name: "truth_my", widget: "text", required: false }
-
-      - { label: "Application — English", name: "application_en", widget: "text" }
-      - { label: "Application — Myanmar", name: "application_my", widget: "text" }
-
-      - { label: "Decision — English (Optional)", name: "decision_en", widget: "text", required: false }
-      - { label: "Decision — Myanmar (Optional)", name: "decision_my", widget: "text", required: false }
-
-      - { label: "Prayer — English", name: "prayer_en", widget: "text" }
-      - { label: "Prayer — Myanmar", name: "prayer_my", widget: "text" }
-        - name: "bible-studies"
+  - name: "bible-studies"
     label: "Bible Studies"
     folder: "bible-studies"
     create: true
@@ -49,3 +44,4 @@ collections:
       - { label: "Passage", name: "passage", widget: "string" }
       - { label: "Burmese Content", name: "body_my", widget: "markdown" }
       - { label: "English Content", name: "body_en", widget: "markdown" }
+```
