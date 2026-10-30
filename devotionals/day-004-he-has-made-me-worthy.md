@@ -5,7 +5,7 @@ author_en: "Joseph Chan"
 author_my: "စိုးမိုးနိုင်"
 title_en: "He Has Made Me Worthy"
 title_my: "ထိုက်တန်စေခဲ့ပြီ"
-verse_en: '"Then the LORD said to Joshua, ‘Today I have rolled away the reproach of Egypt from you.” — Joshua 5:9'
+verse_en: '"Then the LORD said to Joshua, ‘Today I have rolled away the reproach of Egypt from you.” — Joshua 5:9' 
 verse_my: '"ထာဝရဘုရားကလည်း၊ ‘အဲဂုတ္တုပြည်နှင့်ဆိုင်သော ကဲ့ရဲ့စရာအကြောင်းကို သင်တို့မှ ယနေ့ ငါပယ်ရှင်းပြီ’ ဟု ယောရှုအား မိန့်တော်မူ၏။" — ယောရှု ၅:၉'
 reflection_en: |
   Sometimes, I find myself wondering whether I am still worthy to inherit God's promises because of the mistakes I made in the past. Those past failures have caused me to keep condemning myself, even to this day, and have made me hesitant to take the next steps forward. Feelings of shame often find their way into my heart.
