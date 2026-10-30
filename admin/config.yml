@@ -2,7 +2,7 @@ backend:
   name: github
   repo: newthingmakers-cmyk/new-thing-makers-ministry
   branch: main
-
+  base_url: https://restless-waterfall-2350.newthingmakers.workers.dev
 media_folder: "images"
 public_folder: "/images"
 
