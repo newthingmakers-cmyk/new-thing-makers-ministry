@@ -15,6 +15,8 @@ collections:
     fields:
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Day Number", name: "day", widget: "string", required: false }
+      - { label: "Author - English", name: "author_en", widget: "string", default: "Joseph Chan" }
+      - { label: "Author - Myanmar", name: "author_my", widget: "string", default: "သိက္ခာတော်ရ ဆရာစိုးမိုးနိုင်" }
       - { label: "Title - English", name: "title_en", widget: "string" }
       - { label: "Title - Myanmar", name: "title_my", widget: "string" }
       - { label: "Bible Verse - English", name: "verse_en", widget: "text" }
