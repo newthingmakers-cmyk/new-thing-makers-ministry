@@ -3,7 +3,7 @@ date: 2026-10-30
 day: "006"
 title_en: "I Want to Be Like You"
 title_my: "ကိုယ်တော်နည်းတူဖြစ်လိုပါ၏"
-author_en: "Soe Moe Naing"
+author_en: "Joseph Chan"
 author_my: "စိုးမိုးနိုင်"
 verse_en: "Luke 6:35"
 verse_my: "ရှင်လုကာ ၆:၃၅"
