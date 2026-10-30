@@ -18,12 +18,8 @@ verse_my: >-
 
 
   ၁ ကောရိန္သု ၆:၁၀
-reflection_en: >-
-  When I once visited a region known for producing precious gemstones, a friend
-  showed me a piece of rough stone and asked, “Do you know that this is a
-  precious stone?” To me, the rough stone he showed looked no different from the
-  ordinary stones used to pave the road in front of a house. The reason was
-  simple: I genuinely did not know that the stone was valuable.
+reflection_en: |
+  When I once visited a region known for producing precious gemstones, a friend showed me a piece of rough stone and asked, “Do you know that this is a precious stone?” To me, the rough stone he showed looked no different from the ordinary stones used to pave the road in front of a house. The reason was simple: I genuinely did not know that the stone was valuable.
 
 
   In the spiritual life of a believer, it is also important to understand the value of our inheritance in the Kingdom of God. There were times in my own life when I did not understand its value and therefore did not take it seriously. Whenever teachers taught me, I thought that simply gaining more knowledge was enough. As a result, I continued holding on to fleshly thoughts and practices without truly recognizing the great value of the inheritance God had graciously given me.
@@ -33,15 +29,11 @@ reflection_en: >-
 
 
   Simply knowing about the value of the Kingdom's inheritance does not mean that we are truly valuing it. A person who genuinely understands the preciousness of this inheritance will seek to live a life that pleases God, continually examining and correcting their life, surrendering it to Him, and committing themselves to walk in His ways each day.
-reflection_my: >-
-  အဖိုးတန်ကျောက်မျက်ရတနာများ ထွက်ရှိတဲ့ဒေသတစ်ခုကို ရောက်ခဲ့တုန်းက မိတ်ဆွေတစ်ဦးက
-  ကျောက်ရိုင်းတစ်တုံးကို ပြပြီး “ဒါ အဖိုးတန်ကျောက်ဆိုတာ သိလား” လို့ မေးခဲ့တယ်။
-  ကျွန်တော့်အမြင်မှာတော့ သူပြတဲ့ကျောက်ရိုင်းနဲ့ အိမ်ရှေ့လမ်းမှာ ခင်းထားတဲ့
-  ကျောက်တုံးဟာ အတူတူလိုပါပဲ။ ဘာကြောင့်လဲဆိုတော့ အဲဒီကျောက်ဟာ အဖိုးတန်ကျောက်
-  ဖြစ်တယ်ဆိုတာကို ကျွန်တော် အမှန်တကယ် မသိလို့ပဲဖြစ်ပါတယ်။
+reflection_my: |
+  အဖိုးတန်ကျောက်မျက်ရတနာများ ထွက်ရှိတဲ့ဒေသတစ်ခုကို ရောက်ခဲ့တုန်းက မိတ်ဆွေတစ်ဦးက ကျောက်ရိုင်းတစ်တုံးကို ပြပြီး “ဒါ အဖိုးတန်ကျောက်ဆိုတာ သိလား” လို့ မေးခဲ့တယ်။ ကျွန်တော့်အမြင်မှာတော့ သူပြတဲ့ကျောက်ရိုင်းနဲ့ အိမ်ရှေ့လမ်းမှာ ခင်းထားတဲ့ ကျောက်တုံးဟာ အတူတူလိုပါပဲ။ ဘာကြောင့်လဲဆိုတော့ အဲဒီကျောက်ဟာ အဖိုးတန်ကျောက် ဖြစ်တယ်ဆိုတာကို ကျွန်တော် အမှန်တကယ် မသိလို့ပဲဖြစ်ပါတယ်။
 
 
-  ယုံကြည်သူတစ်ဦးရဲ့ ဝိညာဉ်ရေးရာအသက်တာမှာလည်း ဘုရားသခင်၏ နိုင်ငံတော်အမွေရဲ့ တန်ဖိုးကို နားလည်သိရှိဖို့ လိုအပ်ပါတယ်။ ကျွန်တော့်အသက်တာမှာ အဲဒီအရာကို နားမလည်ခဲ့တာကြောင့် အလေးအနက်မထားခဲ့တဲ့ အချိန်တွေ ရှိခဲ့ဖူးပါတယ်။ ဆရာသမားတွေ သင်ကြားပေးတဲ့အခါ အသိပညာတစ်ခု ရရှိလိုက်တာကိုပဲ လုံလောက်ပြီလို့ ထင်ခဲ့မိတယ်။ ဒါကြောင့်ပဲ ဇာတိပကတိရဲ့ အတွေးအမြင်နဲ့ အမူအကျင့်တွေကို ဆက်လက်ဆုပ်ကိုင်ထားရင်း ဘုရားသခင်ပေးသနားတော်မူတဲ့ အမွေရဲ့ တန်ဖိုးကြီးမားမှုကို အမှန်တကယ် မမြင်နိုင်ခဲ့ပါဘူး။
+  ယုံကြည်သူတစ်ဦးရဲ့ ဝိညာဉ်ရေးရာအသက်တာမှာလည်း ဘုရားသခင်၏ နိုင်ငံတော်အမွေရဲ တန်ဖိုးကို နားလည်သိရှိဖို့ လိုအပ်ပါတယ်။ ကျွန်တော့်အသက်တာမှာ အဲဒီအရာကို နားမလည်ခဲ့တာကြောင့် အလေးအနက်မထားခဲ့တဲ့ အချိန်တွေ ရှိခဲ့ဖူးပါတယ်။ ဆရာသမားတွေ သင်ကြားပေးတဲ့အခါ အသိပညာတစ်ခု ရရှိလိုက်တာကိုပဲ လုံလောက်ပြီလို့ ထင်ခဲ့မိတယ်။ ဒါကြောင့်ပဲ ဇာတိပကတိရဲ့ အတွေးအမြင်နဲ့ အမူအကျင့်တွေကို ဆက်လက်ဆုပ်ကိုင်ထားရင်း ဘုရားသခင်ပေးသနားတော်မူတဲ့ အမွေရဲ့ တန်ဖိုးကြီးမားမှုကို အမှန်တကယ် မမြင်နိုင်ခဲ့ပါဘူး။
 
 
   တစ်နေ့မှာတော့ ၁ ကောရိန္သု ၆:၁၀ ကို ဆင်ခြင်နေစဉ် ဘုရားသခင်က ကျွန်တော့်အသက်တာထဲမှာ လွဲမှားနေတဲ့အရာတွေကို ရှင်းလင်းစွာ သိမြင်နိုင်ဖို့ မီးမောင်းထိုးပြပေးခဲ့ပါတယ်။ အဲဒီနှုတ်ကပတ်တော်အားဖြင့် နိုင်ငံတော်ရဲ့ အမွေကို သိရှိနားလည်ပြီး၊ တန်ဖိုးထားလျက် ဘုရားသခင်နှစ်သက်တော်မူတဲ့ အသက်တာအတိုင်း အသက်ရှင်ဖို့ လိုအပ်ပါလားဆိုတာကို နားလည်လာခဲ့တယ်။ ဒါကြောင့် ဇာတိပကတိရဲ့ အတွေးအမြင်နဲ့ အမူအကျင့်တွေကို ဆက်လက်ဆုပ်ကိုင်မထားတော့ဘဲ ဘုရားသခင်နှစ်သက်တော်မူတဲ့ အသက်တာကို ရွေးချယ်ဖို့ နေ့စဉ်သင်ယူဖို့ သင်ယူခဲ့ပါတယ်။
