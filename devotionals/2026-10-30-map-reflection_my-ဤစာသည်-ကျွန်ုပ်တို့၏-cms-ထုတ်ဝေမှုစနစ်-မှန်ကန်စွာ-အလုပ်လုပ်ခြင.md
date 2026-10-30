@@ -1,6 +1,8 @@
 ---
 date: 2026-10-30T10:40:00.000+08:00
 day: TEST 001
+author_en: Joseph Chan
+author_my: သိက္ခာတော်ရ ဆရာစိုးမိုးနိုင်
 title_en: Testing CMS Publishing System
 title_my: CMS ထုတ်ဝေမှုစနစ် စမ်းသပ်ခြင်း
 verse_en: Psalm 119:105
