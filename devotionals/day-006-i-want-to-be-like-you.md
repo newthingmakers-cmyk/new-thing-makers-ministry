@@ -25,7 +25,8 @@ reflection_my: |
   အခုတော့ ဘုရားသားသမီးတစ်ယောက်အနေနဲ့ ကိုယ်တော်ရဲ့ မေတ္တာကို ခံယူရုံမျှမကဘဲ **ကိုယ်တော်နည်းတူ ချစ်တတ်တဲ့သူ၊ ခွင့်လွှတ်တတ်တဲ့သူ၊ ကျေးဇူးပြုတတ်တဲ့သူတစ်ယောက် ဖြစ်ချင်ပါတယ်။**
 truth_en: "When we truly experience God's love, we learn to love, forgive, and show kindness even to those who hurt us. God's love should not stop with us but flow through us to others."
 truth_my: "ဘုရားသခင်၏ ချစ်ခြင်းမေတ္တာကို အမှန်တကယ် သိရှိခံစားသောသူသည် မိမိကို နာကျင်စေသူများကိုပင် ချစ်ခင်ခွင့်လွှတ်ပြီး ကျေးဇူးပြုတတ်လာသည်။ ဘုရားသခင်၏ မေတ္တာသည် ကျွန်ုပ်တို့ထဲ၌သာ ရပ်တန့်မနေဘဲ အခြားသူများထံသို့လည်း စီးဆင်းသွားရမည်။"
-application_en: ""
+application_en: "Am I still struggling to forgive those who have hurt me? How do I feel when they experience difficulties or suffering?
+Am I showing love and kindness to those who have hurt me, reflecting God's love toward them?"
 application_my: |
   **ကိုယ့်ကိုယ်ကို ပြန်ကြည့်ခြင်း**
 
@@ -34,7 +35,8 @@ application_my: |
   ✅ ငါ့ကို နာကျင်စေခဲ့သူတွေအပေါ် ဘုရားသခင်ရဲ့ ချစ်ခြင်းမေတ္တာနဲ့အညီ ချစ်ခင်ပြီး ကျေးဇူးပြုနေမိရဲ့လား။
 decision_en: "From today onward, I will not only receive God's love but also seek to become someone who loves, forgives, and shows kindness to others as the Lord does."
 decision_my: "ယနေ့မှစ၍ ဘုရားသခင်၏ မေတ္တာကို ခံယူရုံသာမက ကိုယ်တော်နည်းတူ သူတစ်ပါးကို ချစ်ခင်ခွင့်လွှတ်ပြီး ကျေးဇူးပြုတတ်သူတစ်ယောက် ဖြစ်လာရန် ကြိုးစားမည်။"
-prayer_en: ""
+prayer_en: "Heavenly Father, please remove the pain and bitterness from my heart. Give me the strength to forgive and love those who have hurt me. Help me to become someone who loves and shows kindness just as You do.
+In the name of Jesus Christ, I pray. Amen."
 prayer_my: |
   အဖဘုရား၊ ကျွန်ုပ်နှလုံးသားထဲက နာကျင်မှုနဲ့ ခါးသီးမှုတွေကို ဖယ်ရှားပေးတော်မူပါ။ ကျွန်ုပ်ကို နာကျင်စေသူတွေကို ခွင့်လွှတ်ချစ်ခင်နိုင်ဖို့ ခွန်အားပေးပြီး ကိုယ်တော်နည်းတူ ချစ်တတ်၊ ကျေးဇူးပြုတတ်သူ ဖြစ်စေတော်မူပါ။
 
