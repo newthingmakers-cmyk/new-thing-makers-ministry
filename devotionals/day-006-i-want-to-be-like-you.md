@@ -25,8 +25,9 @@ reflection_my: |
   အခုတော့ ဘုရားသားသမီးတစ်ယောက်အနေနဲ့ ကိုယ်တော်ရဲ့ မေတ္တာကို ခံယူရုံမျှမကဘဲ **ကိုယ်တော်နည်းတူ ချစ်တတ်တဲ့သူ၊ ခွင့်လွှတ်တတ်တဲ့သူ၊ ကျေးဇူးပြုတတ်တဲ့သူတစ်ယောက် ဖြစ်ချင်ပါတယ်။**
 truth_en: "When we truly experience God's love, we learn to love, forgive, and show kindness even to those who hurt us. God's love should not stop with us but flow through us to others."
 truth_my: "ဘုရားသခင်၏ ချစ်ခြင်းမေတ္တာကို အမှန်တကယ် သိရှိခံစားသောသူသည် မိမိကို နာကျင်စေသူများကိုပင် ချစ်ခင်ခွင့်လွှတ်ပြီး ကျေးဇူးပြုတတ်လာသည်။ ဘုရားသခင်၏ မေတ္တာသည် ကျွန်ုပ်တို့ထဲ၌သာ ရပ်တန့်မနေဘဲ အခြားသူများထံသို့လည်း စီးဆင်းသွားရမည်။"
-application_en: "Am I still struggling to forgive those who have hurt me? How do I feel when they experience difficulties or suffering?
-Am I showing love and kindness to those who have hurt me, reflecting God's love toward them?"
+application_en: |
+  Am I still struggling to forgive those who have hurt me? How do I feel when they experience difficulties or suffering?
+  Am I showing love and kindness to those who have hurt me, reflecting God's love toward them?
 application_my: |
   **ကိုယ့်ကိုယ်ကို ပြန်ကြည့်ခြင်း**
 
