@@ -57,13 +57,11 @@ truth_my: ဘုရားသခင်၏ နိုင်ငံတော်အမ
   ဘုရားသခင်နှစ်သက်တော်မူသော အသက်တာဖြင့် အသက်ရှင်ရန် ခေါ်တော်မူခြင်းခံရသူများ
   ဖြစ်ကြသည်။
 application_en: >-
-  If God asked me today, “Do you know that this is a precious inheritance?” how
-  would I respond?
+  If God asked me today, “Do you know that this is a precious inheritance?” how would I respond?
 
   What should I begin with today in order to value the inheritance of the Kingdom and choose a life that pleases God?
 application_my: >-
-  ယနေ့ ဘုရားသခင်က “ဒါ အဖိုးတန်တဲ့အမွေဆိုတာ သိလား” လို့ မေးလာရင် ကျွန်တော်
-  ဘယ်လိုတုံ့ပြန်မလဲ။
+  ယနေ့ ဘုရားသခင်က “ဒါ အဖိုးတန်တဲ့အမွေဆိုတာ သိလား” လို့ မေးလာရင် ကျွန်တော်ဘယ်လိုတုံ့ပြန်မလဲ။
 
   နိုင်ငံတော်အမွေရဲ့ တန်ဖိုးကို အလေးထားပြီး ဘုရားသခင်နှစ်သက်တော်မူတဲ့ အသက်တာကို ရွေးချယ်ဖို့ ယနေ့ ဘယ်အရာကနေ စတင်မလဲ။
 decision_en: I will value the inheritance of the Kingdom and live a life that pleases God.
