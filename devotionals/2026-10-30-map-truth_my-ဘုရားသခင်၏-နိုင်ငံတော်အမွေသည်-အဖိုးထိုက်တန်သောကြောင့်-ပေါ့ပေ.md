@@ -6,15 +6,12 @@ author_my: သိက္ခာတော်ရ ဆရာစိုးမိုး�
 title_en: The Precious Inheritance of the Kingdom
 title_my: နိုင်ငံတော်၏ အဖိုးထိုက်သောအမွေ
 verse_en: >-
-  “Nor thieves, nor the greedy, nor drunkards, nor revilers, nor swindlers will
-  inherit the kingdom of God.”
+  “Nor thieves, nor the greedy, nor drunkards, nor revilers, nor swindlers will inherit the kingdom of God.”
 
 
   1 Corinthians 6:10
 verse_my: >-
-  “သူ့ဥစ္စာကို ခိုးသောသူ၊ လောဘလွန်ကျူးသောသူ၊ သေသေရက်နှင့် ယစ်မူးသောသူ၊
-  ဆဲရေးကဲ့ရဲ့သောသူ၊ အနိုင်အထက် လုယူသောသူတို့သည် ဘုရားသခင်၏ နိုင်ငံတော်ကို
-  အမွေမခံရကြ။”
+  “သူ့ဥစ္စာကို ခိုးသောသူ၊ လောဘလွန်ကျူးသောသူ၊ သေသေရက်နှင့် ယစ်မူးသောသူ၊ ဆဲရေးကဲ့ရဲ့သောသူ၊ အနိုင်အထက် လုယူသောသူတို့သည် ဘုရားသခင်၏ နိုင်ငံတော်ကို အမွေမခံရကြ။”
 
 
   ၁ ကောရိန္သု ၆:၁၀
