@@ -394,7 +394,19 @@ const lines = source.split("\n"), data = {};
   }
   const item=line.match(/^\s+-\s+(.*)$/);
   if(item&&listKey){const raw=item[1].trim();data[listKey].push(raw.replace(/^(['"])([\s\S]*)\1$/,"$2"));continue;}
-  if(block&&(/^\s+/.test(line)||line.trim()==="")){block.lines.push(line.trim()===""?"":line.replace(/^\s{2,}/,""));data[block.key]=block.lines.join(block.fold?" ":"\n").trim();continue;}
+  if(block&&(/^\s+/.test(line)||line.trim()==="")){
+   block.lines.push(line.trim()===""?"":line.replace(/^\s{2,}/,""));
+   if(block.fold){
+    const paragraphs=[];let paragraph=[];
+    for(const blockLine of block.lines){
+     if(blockLine.trim()===""){if(paragraph.length){paragraphs.push(paragraph.join(" "));paragraph=[];}}
+     else paragraph.push(blockLine);
+    }
+    if(paragraph.length)paragraphs.push(paragraph.join(" "));
+    data[block.key]=paragraphs.join("\n\n").trim();
+   }else data[block.key]=block.lines.join("\n").trim();
+   continue;
+  }
   if(scalarKey&&/^\s+\S/.test(line)){
    const continuation=line.trim();
    data[scalarKey]=(String(data[scalarKey]||"")+" "+continuation).trim();
